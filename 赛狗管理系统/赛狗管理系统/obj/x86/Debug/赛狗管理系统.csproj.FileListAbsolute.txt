@@ -1,0 +1,8 @@
+D:\z\技术\电脑\C#\VC#2010\赛狗管理系统\赛狗管理系统\bin\Debug\赛狗管理系统.exe
+D:\z\技术\电脑\C#\VC#2010\赛狗管理系统\赛狗管理系统\bin\Debug\赛狗管理系统.pdb
+D:\z\技术\电脑\C#\VC#2010\赛狗管理系统\赛狗管理系统\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\z\技术\电脑\C#\VC#2010\赛狗管理系统\赛狗管理系统\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\z\技术\电脑\C#\VC#2010\赛狗管理系统\赛狗管理系统\obj\x86\Debug\赛狗管理系统.csproj.GenerateResource.Cache
+D:\z\技术\电脑\C#\VC#2010\赛狗管理系统\赛狗管理系统\obj\x86\Debug\赛狗管理系统.exe
+D:\z\技术\电脑\C#\VC#2010\赛狗管理系统\赛狗管理系统\obj\x86\Debug\赛狗管理系统.pdb
+D:\z\技术\电脑\C#\VC#2010\赛狗管理系统\赛狗管理系统\obj\x86\Debug\赛狗管理系统.csprojResolveAssemblyReference.cache

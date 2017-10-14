@@ -1,0 +1,14 @@
+D:\z\技术\电脑\C#\VC#2010\Contact\Contact\bin\Debug\Contact.exe
+D:\z\技术\电脑\C#\VC#2010\Contact\Contact\bin\Debug\Contact.pdb
+D:\z\技术\电脑\C#\VC#2010\Contact\Contact\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\z\技术\电脑\C#\VC#2010\Contact\Contact\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\z\技术\电脑\C#\VC#2010\Contact\Contact\obj\x86\Debug\Contact.csproj.GenerateResource.Cache
+D:\z\技术\电脑\C#\VC#2010\Contact\Contact\obj\x86\Debug\Contact.exe
+D:\z\技术\电脑\C#\VC#2010\Contact\Contact\obj\x86\Debug\Contact.pdb
+D:\z\技术\电脑\C#\VC#2010\Contact\Contact\bin\Debug\ContactDB.sdf
+D:\z\技术\电脑\C#\VC#2010\Contact\Contact\bin\Debug\Contact.exe.config
+D:\z\技术\电脑\C#\VC#2010\Contact\Contact\bin\Debug\Contact.exe.manifest
+D:\z\技术\电脑\C#\VC#2010\Contact\Contact\bin\Debug\Contact.application
+D:\z\技术\电脑\C#\VC#2010\Contact\Contact\obj\x86\Debug\Contact.TrustInfo.xml
+D:\z\技术\电脑\C#\VC#2010\Contact\Contact\obj\x86\Debug\Contact.exe.manifest
+D:\z\技术\电脑\C#\VC#2010\Contact\Contact\obj\x86\Debug\Contact.application
