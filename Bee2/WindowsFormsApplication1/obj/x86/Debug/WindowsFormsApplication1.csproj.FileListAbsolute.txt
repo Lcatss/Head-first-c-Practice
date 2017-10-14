@@ -1,0 +1,14 @@
+C:\Users\born9\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\born9\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\born9\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\born9\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\born9\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\born9\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\born9\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+D:\z\技术\电脑\C#\VC#2010\Bee2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+D:\z\技术\电脑\C#\VC#2010\Bee2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+D:\z\技术\电脑\C#\VC#2010\Bee2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\z\技术\电脑\C#\VC#2010\Bee2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\z\技术\电脑\C#\VC#2010\Bee2\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+D:\z\技术\电脑\C#\VC#2010\Bee2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\z\技术\电脑\C#\VC#2010\Bee2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
