@@ -1,7 +1,0 @@
-D:\z\技术\电脑\C#\VC#2010\Hits the Key!\Hits the Key!\bin\Release\Hits the Key!.exe
-D:\z\技术\电脑\C#\VC#2010\Hits the Key!\Hits the Key!\bin\Release\Hits the Key!.pdb
-D:\z\技术\电脑\C#\VC#2010\Hits the Key!\Hits the Key!\obj\x86\Release\WindowsFormsApplication1.Form1.resources
-D:\z\技术\电脑\C#\VC#2010\Hits the Key!\Hits the Key!\obj\x86\Release\WindowsFormsApplication1.Properties.Resources.resources
-D:\z\技术\电脑\C#\VC#2010\Hits the Key!\Hits the Key!\obj\x86\Release\Hits the Key!.csproj.GenerateResource.Cache
-D:\z\技术\电脑\C#\VC#2010\Hits the Key!\Hits the Key!\obj\x86\Release\Hits the Key!.exe
-D:\z\技术\电脑\C#\VC#2010\Hits the Key!\Hits the Key!\obj\x86\Release\Hits the Key!.pdb

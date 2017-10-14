@@ -1,8 +1,0 @@
-D:\z\技术\电脑\C#\VC#2010\Card2\Card2\bin\Debug\Card2.exe
-D:\z\技术\电脑\C#\VC#2010\Card2\Card2\bin\Debug\Card2.pdb
-D:\z\技术\电脑\C#\VC#2010\Card2\Card2\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
-D:\z\技术\电脑\C#\VC#2010\Card2\Card2\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
-D:\z\技术\电脑\C#\VC#2010\Card2\Card2\obj\x86\Debug\Card2.csproj.GenerateResource.Cache
-D:\z\技术\电脑\C#\VC#2010\Card2\Card2\obj\x86\Debug\Card2.exe
-D:\z\技术\电脑\C#\VC#2010\Card2\Card2\obj\x86\Debug\Card2.pdb
-D:\z\技术\电脑\C#\VC#2010\Card2\Card2\obj\x86\Debug\Card2.csprojResolveAssemblyReference.cache

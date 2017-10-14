@@ -1,4 +1,0 @@
-D:\z\技术\电脑\C#\VC#2010\Card\Card\bin\Debug\Card.exe
-D:\z\技术\电脑\C#\VC#2010\Card\Card\bin\Debug\Card.pdb
-D:\z\技术\电脑\C#\VC#2010\Card\Card\obj\x86\Debug\Card.exe
-D:\z\技术\电脑\C#\VC#2010\Card\Card\obj\x86\Debug\Card.pdb

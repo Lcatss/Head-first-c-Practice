@@ -1,7 +1,0 @@
-D:\z\技术\电脑\C#\VC#2010\Bee\Bee\bin\Debug\Bee.exe
-D:\z\技术\电脑\C#\VC#2010\Bee\Bee\bin\Debug\Bee.pdb
-D:\z\技术\电脑\C#\VC#2010\Bee\Bee\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
-D:\z\技术\电脑\C#\VC#2010\Bee\Bee\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
-D:\z\技术\电脑\C#\VC#2010\Bee\Bee\obj\x86\Debug\Bee.csproj.GenerateResource.Cache
-D:\z\技术\电脑\C#\VC#2010\Bee\Bee\obj\x86\Debug\Bee.exe
-D:\z\技术\电脑\C#\VC#2010\Bee\Bee\obj\x86\Debug\Bee.pdb

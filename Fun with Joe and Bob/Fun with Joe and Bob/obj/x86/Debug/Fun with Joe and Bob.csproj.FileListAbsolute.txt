@@ -1,7 +1,0 @@
-D:\z\技术\电脑\C#\VC#2010\Fun with Joe and Bob\Fun with Joe and Bob\bin\Debug\Fun with Joe and Bob.exe
-D:\z\技术\电脑\C#\VC#2010\Fun with Joe and Bob\Fun with Joe and Bob\bin\Debug\Fun with Joe and Bob.pdb
-D:\z\技术\电脑\C#\VC#2010\Fun with Joe and Bob\Fun with Joe and Bob\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
-D:\z\技术\电脑\C#\VC#2010\Fun with Joe and Bob\Fun with Joe and Bob\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
-D:\z\技术\电脑\C#\VC#2010\Fun with Joe and Bob\Fun with Joe and Bob\obj\x86\Debug\Fun with Joe and Bob.csproj.GenerateResource.Cache
-D:\z\技术\电脑\C#\VC#2010\Fun with Joe and Bob\Fun with Joe and Bob\obj\x86\Debug\Fun with Joe and Bob.exe
-D:\z\技术\电脑\C#\VC#2010\Fun with Joe and Bob\Fun with Joe and Bob\obj\x86\Debug\Fun with Joe and Bob.pdb

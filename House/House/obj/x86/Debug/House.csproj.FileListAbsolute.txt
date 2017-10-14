@@ -1,8 +1,0 @@
-D:\z\技术\电脑\C#\VC#2010\House\House\obj\x86\Debug\House.Form1.resources
-D:\z\技术\电脑\C#\VC#2010\House\House\obj\x86\Debug\House.Properties.Resources.resources
-D:\z\技术\电脑\C#\VC#2010\House\House\obj\x86\Debug\House.csproj.GenerateResource.Cache
-D:\z\技术\电脑\C#\VC#2010\House\House\bin\Debug\House.exe
-D:\z\技术\电脑\C#\VC#2010\House\House\bin\Debug\House.pdb
-D:\z\技术\电脑\C#\VC#2010\House\House\obj\x86\Debug\House.exe
-D:\z\技术\电脑\C#\VC#2010\House\House\obj\x86\Debug\House.pdb
-D:\z\技术\电脑\C#\VC#2010\House\House\obj\x86\Debug\House.csprojResolveAssemblyReference.cache

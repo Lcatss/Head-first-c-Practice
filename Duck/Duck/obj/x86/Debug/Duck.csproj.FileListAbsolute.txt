@@ -1,4 +1,0 @@
-D:\z\技术\电脑\C#\VC#2010\Duck\Duck\bin\Debug\Duck.exe
-D:\z\技术\电脑\C#\VC#2010\Duck\Duck\bin\Debug\Duck.pdb
-D:\z\技术\电脑\C#\VC#2010\Duck\Duck\obj\x86\Debug\Duck.exe
-D:\z\技术\电脑\C#\VC#2010\Duck\Duck\obj\x86\Debug\Duck.pdb

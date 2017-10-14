@@ -1,8 +1,0 @@
-D:\z\技术\电脑\C#\VC#2010\Go Fish!\Go Fish!\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
-D:\z\技术\电脑\C#\VC#2010\Go Fish!\Go Fish!\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
-D:\z\技术\电脑\C#\VC#2010\Go Fish!\Go Fish!\obj\x86\Debug\Go Fish!.csproj.GenerateResource.Cache
-D:\z\技术\电脑\C#\VC#2010\Go Fish!\Go Fish!\bin\Debug\Go Fish!.exe
-D:\z\技术\电脑\C#\VC#2010\Go Fish!\Go Fish!\bin\Debug\Go Fish!.pdb
-D:\z\技术\电脑\C#\VC#2010\Go Fish!\Go Fish!\obj\x86\Debug\Go Fish!.csprojResolveAssemblyReference.cache
-D:\z\技术\电脑\C#\VC#2010\Go Fish!\Go Fish!\obj\x86\Debug\Go Fish!.exe
-D:\z\技术\电脑\C#\VC#2010\Go Fish!\Go Fish!\obj\x86\Debug\Go Fish!.pdb
