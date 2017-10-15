@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
@@ -12,11 +13,27 @@ namespace WindowsFormsApplication1
         protected Point location;
         public Point Location { get { return location; } }
         protected Game game;
+        protected int hitPoints;
+        public int HitPoints { get { return hitPoints; } }
+        public bool Alive
+        {
+            get { return (hitPoints > 0); }
+        }
 
-        public Mover(Game game, Point location)
+        public Mover(Game game, Point location,int hitPoints)
         {
             this.game = game;
             this.location = location;
+            this.hitPoints = hitPoints;
+
+
+        }
+
+        
+
+        public void Hit(int maxDamage, Random random)
+        {
+            hitPoints -= random.Next(1, maxDamage + 1);
         }
 
         public bool Nearby(Point locationToCheck, int distance)

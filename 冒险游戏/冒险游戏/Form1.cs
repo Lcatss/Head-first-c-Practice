@@ -33,95 +33,63 @@ namespace WindowsFormsApplication1
             player.Location = game.PlayerLocation;
             playerHitPoints.Text = game.PlayerHitPoints.ToString();
 
-            bool showBat = false;
-            bool showGhost = false;
-            bool showGhoul = false;
+            List<PictureBox> weaponList = new List<PictureBox>()
+            {
+                ListBow,ListSword,ListMace,ListBluePotion,ListRedPotion,
+            };
+
             int enemiesShown = 0;
 
             foreach (Enemy enemy in game.Enemies)
             {
-                if (enemy is Bat)
+                PictureBox picturebox=GetPictureBox(enemy);
+                Label label=GetLabel(enemy);
+                if (enemy.Alive)
                 {
-                    bat.Location = enemy.Location;
-                    batHitPoints.Text = enemy.HitPoints.ToString();
-                    if (enemy.HitPoints > 0)
-                    {
-                        showBat = true;
-                        enemiesShown++;
-                    }
+                    picturebox.Location = enemy.Location;
+                    picturebox.Visible = true;
+                    picturebox.Enabled = true;
+                    label.Text = enemy.HitPoints.ToString();
+                    enemiesShown++;
                 }
-                if (enemy is Ghost)
+                else
                 {
-                    ghost.Location = enemy.Location;
-                    ghostHitPoints.Text = enemy.HitPoints.ToString();
-                    if (enemy.HitPoints > 0)
-                    {
-                        showGhost = true;
-                        enemiesShown++;
-                    }
-                }
-                if (enemy is Ghoul)
-                {
-                    ghoul.Location = enemy.Location;
-                    ghoulHitPoints.Text = enemy.HitPoints.ToString();
-                    if (enemy.HitPoints > 0)
-                    {
-                        showGhoul = true;
-                        enemiesShown++;
-                    }
+                    picturebox.Visible = false;
+                    picturebox.Enabled = false;
+                    label.Text = "";
                 }
             }
 
-            if (showBat)
-                bat.Visible = true;
-            else
-                bat.Visible = false;
-            if (showGhost)
-                ghost.Visible = true;
-            else 
-                ghost.Visible = false;
-            if (showGhoul)
-                ghoul.Visible = true;
-            else
-                ghoul.Visible = false;
-
-            sword.Visible = false;
-            bow.Visible = false;
-            redPotion.Visible = false;
-            bluePotion.Visible = false;
-            mace.Visible = false;
 
 
-            Control weaponControl = null;
-            switch (game.WeaponInRoom.Name)
-            {
-                case "Sword":
-                    weaponControl = sword; break;
-                case "Bow":
-                    weaponControl = bow; break;
-                case "Mace":
-                    weaponControl = mace; break;
-                case "Blue Potion":
-                    weaponControl = bluePotion; break;
-                case "Red Potion":
-                    weaponControl = redPotion; break;
-            }
+            Control weaponControl = GetPictureBox(game.WeaponInRoom);
             weaponControl.Visible = true;
 
-            if (game.CheckPlayerInventory("Sword"))
+            if (game.CheckPlayerInventory<Sword>())
                 ListSword.Visible = true;
-            if (game.CheckPlayerInventory("Bow"))
+            if (game.CheckPlayerInventory<Bow>())
                 ListBow.Visible = true;
-            if (game.CheckPlayerInventory("Mace"))
+            if (game.CheckPlayerInventory<Mace>())
                 ListMace.Visible = true;
-            if (game.CheckPlayerInventory("Blue Potion"))
+            if (game.CheckPlayerInventory<BluePotion>())
                 ListBluePotion.Visible = true;
             else
                 ListBluePotion.Visible = false;
-            if (game.CheckPlayerInventory("Red Potion"))
+            if (game.CheckPlayerInventory<RedPotion>())
                 ListRedPotion.Visible = true;
             else
                 ListRedPotion.Visible = false;
+
+            foreach (PictureBox picturebox in weaponList)
+                picturebox.BorderStyle = BorderStyle.None;
+
+            if (game.EquippedWeapon != null)
+            {
+
+                PictureBox weaponEquipped = GetListPictureBox(game.EquippedWeapon);
+                weaponEquipped.BorderStyle = BorderStyle.FixedSingle;
+                
+            }
 
             weaponControl.Location = game.WeaponInRoom.Location;
             if (game.WeaponInRoom.PickedUp)
@@ -129,7 +97,7 @@ namespace WindowsFormsApplication1
             else
                 weaponControl.Visible = true;
             if (game.PlayerHitPoints <= 0)
-            {   
+            {
                 MessageBox.Show("You Died");
                 Application.Exit();
             }
@@ -143,101 +111,101 @@ namespace WindowsFormsApplication1
                 else
                     UpdateCharacters();
             }
-
-
-
         }
 
+        private PictureBox GetPictureBox(Mover mover)
+        {
+            if (mover is Bat)
+                return bat;
+            if (mover is Ghost)
+                return ghost;
+            if (mover is Ghoul)
+                return ghoul;
+            if (mover is Player)
+                return player;
+            
+            return null;
+        }
+
+        private PictureBox GetPictureBox(Weapon weapon)
+        {
+            if (weapon is Sword)
+                return sword;
+            if (weapon is Bow)
+                return bow;
+            if (weapon is Mace)
+                return mace;
+            if (weapon is BluePotion)
+                return bluePotion;
+            if (weapon is RedPotion)
+                return redPotion;
+            return null;
+        }
+
+        private PictureBox GetListPictureBox(Weapon weapon)
+        {
+            if (weapon is Sword)
+                return ListSword;
+            if (weapon is Bow)
+                return ListBow;
+            if (weapon is Mace)
+                return ListMace;
+            if (weapon is BluePotion)
+                return ListBluePotion;
+            if (weapon is RedPotion)
+                return ListRedPotion;
+            return null;
+        }
+
+        private Label GetLabel(Mover mover)
+        {
+            if(mover is Player)
+                return playerHitPoints;
+            if(mover is Bat)
+                return batHitPoints;
+            if(mover is Ghost)
+                return ghostHitPoints;
+            if(mover is Ghoul)
+                return ghoulHitPoints;
+            return null;
+        }
+            
 
 
         private void ListSword_Click(object sender, EventArgs e)
         {
-            if (game.CheckPlayerInventory("Sword"))
-            {
+            if (game.CheckPlayerInventory<Sword>())
                 game.Equip("Sword");
-                ListSword.BorderStyle = BorderStyle.FixedSingle;
-                ListBow.BorderStyle = BorderStyle.None;
-                ListMace.BorderStyle = BorderStyle.None;
-                ListBluePotion.BorderStyle = BorderStyle.None;
-                ListRedPotion.BorderStyle = BorderStyle.None;
-
-                attackUp.Text = "Up";
-                attackLeft.Visible = true;
-                attackRight.Visible = true;
-                attackDown.Visible = true;
-            }
+            UpdateCharacters();
         }
 
         private void ListBow_Click(object sender, EventArgs e)
         {
-            if (game.CheckPlayerInventory("Bow"))
-            {
+            if (game.CheckPlayerInventory<Bow>())
                 game.Equip("Bow");
-                ListSword.BorderStyle = BorderStyle.None;
-                ListBow.BorderStyle = BorderStyle.FixedSingle;
-                ListMace.BorderStyle = BorderStyle.None;
-                ListBluePotion.BorderStyle = BorderStyle.None;
-                ListRedPotion.BorderStyle = BorderStyle.None;
-
-                attackUp.Text = "Up";
-                attackLeft.Visible = true;
-                attackRight.Visible = true;
-                attackDown.Visible = true;
-            }
+            UpdateCharacters();
         }
 
         private void ListMace_Click(object sender, EventArgs e)
         {
-            if (game.CheckPlayerInventory("Mace"))
-            {
+            if (game.CheckPlayerInventory<Mace>())
                 game.Equip("Mace");
-                ListSword.BorderStyle = BorderStyle.None;
-                ListBow.BorderStyle = BorderStyle.None;
-                ListMace.BorderStyle = BorderStyle.FixedSingle;
-                ListBluePotion.BorderStyle = BorderStyle.None;
-                ListRedPotion.BorderStyle = BorderStyle.None;
-
-                attackUp.Text = "Up";
-                attackLeft.Visible = true;
-                attackRight.Visible = true;
-                attackDown.Visible = true;
-            }
+            UpdateCharacters();
         }
 
         private void ListBluePotion_Click(object sender, EventArgs e)
         {
-            if (game.CheckPlayerInventory("Blue Potion"))
-            {
+            if (game.CheckPlayerInventory<BluePotion>())
                 game.Equip("Blue Potion");
-                ListSword.BorderStyle = BorderStyle.None;
-                ListBow.BorderStyle = BorderStyle.None;
-                ListMace.BorderStyle = BorderStyle.None;
-                ListBluePotion.BorderStyle = BorderStyle.FixedSingle;
-                ListRedPotion.BorderStyle = BorderStyle.None;
-
-                attackUp.Text = "Drink";
-                attackLeft.Visible = false;
-                attackRight.Visible = false;
-                attackDown.Visible = false;
-            }
+            UpdateCharacters();
         }
 
         private void ListRedPotion_Click(object sender, EventArgs e)
         {
-            if (game.CheckPlayerInventory("Red Potion"))
-            {
+            if (game.CheckPlayerInventory<RedPotion>())
                 game.Equip("Red Potion");
-                ListSword.BorderStyle = BorderStyle.None;
-                ListBow.BorderStyle = BorderStyle.None;
-                ListMace.BorderStyle = BorderStyle.None;
-                ListBluePotion.BorderStyle = BorderStyle.None;
-                ListRedPotion.BorderStyle = BorderStyle.FixedSingle;
+            UpdateCharacters();
 
-                attackUp.Text = "Drink";
-                attackLeft.Visible = false;
-                attackRight.Visible = false;
-                attackDown.Visible = false;
-            }
         }
 
         private void moveUp_Click(object sender, EventArgs e)

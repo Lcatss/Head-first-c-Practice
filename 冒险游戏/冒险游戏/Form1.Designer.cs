@@ -199,7 +199,7 @@
             this.moveDown.Name = "moveDown";
             this.moveDown.Size = new System.Drawing.Size(75, 23);
             this.moveDown.TabIndex = 3;
-            this.moveDown.Text = "Down";
+            this.moveDown.Text = "S";
             this.moveDown.UseVisualStyleBackColor = true;
             this.moveDown.Click += new System.EventHandler(this.moveDown_Click);
             // 
@@ -209,7 +209,7 @@
             this.moveRight.Name = "moveRight";
             this.moveRight.Size = new System.Drawing.Size(75, 23);
             this.moveRight.TabIndex = 2;
-            this.moveRight.Text = "Right";
+            this.moveRight.Text = "D";
             this.moveRight.UseVisualStyleBackColor = true;
             this.moveRight.Click += new System.EventHandler(this.moveRight_Click);
             // 
@@ -219,7 +219,7 @@
             this.moveLeft.Name = "moveLeft";
             this.moveLeft.Size = new System.Drawing.Size(75, 23);
             this.moveLeft.TabIndex = 1;
-            this.moveLeft.Text = "Left";
+            this.moveLeft.Text = "A";
             this.moveLeft.UseVisualStyleBackColor = true;
             this.moveLeft.Click += new System.EventHandler(this.moveLeft_Click);
             // 
@@ -229,7 +229,7 @@
             this.moveUp.Name = "moveUp";
             this.moveUp.Size = new System.Drawing.Size(75, 23);
             this.moveUp.TabIndex = 0;
-            this.moveUp.Text = "Up";
+            this.moveUp.Text = "W";
             this.moveUp.UseVisualStyleBackColor = true;
             this.moveUp.Click += new System.EventHandler(this.moveUp_Click);
             // 
@@ -252,7 +252,7 @@
             this.attackDown.Name = "attackDown";
             this.attackDown.Size = new System.Drawing.Size(75, 23);
             this.attackDown.TabIndex = 7;
-            this.attackDown.Text = "Down";
+            this.attackDown.Text = "K";
             this.attackDown.UseVisualStyleBackColor = true;
             this.attackDown.Click += new System.EventHandler(this.attackDown_Click);
             // 
@@ -262,7 +262,7 @@
             this.attackRight.Name = "attackRight";
             this.attackRight.Size = new System.Drawing.Size(75, 23);
             this.attackRight.TabIndex = 6;
-            this.attackRight.Text = "Right";
+            this.attackRight.Text = "L";
             this.attackRight.UseVisualStyleBackColor = true;
             this.attackRight.Click += new System.EventHandler(this.attackRight_Click);
             // 
@@ -272,7 +272,7 @@
             this.attackLeft.Name = "attackLeft";
             this.attackLeft.Size = new System.Drawing.Size(75, 23);
             this.attackLeft.TabIndex = 5;
-            this.attackLeft.Text = "Left";
+            this.attackLeft.Text = "J";
             this.attackLeft.UseVisualStyleBackColor = true;
             this.attackLeft.Click += new System.EventHandler(this.attackLeft_Click);
             // 
@@ -282,7 +282,7 @@
             this.attackUp.Name = "attackUp";
             this.attackUp.Size = new System.Drawing.Size(75, 23);
             this.attackUp.TabIndex = 4;
-            this.attackUp.Text = "Up";
+            this.attackUp.Text = "I";
             this.attackUp.UseVisualStyleBackColor = true;
             this.attackUp.Click += new System.EventHandler(this.attackUp_Click);
             // 
@@ -487,6 +487,7 @@
             this.Controls.Add(this.bluePotion);
             this.Controls.Add(this.sword);
             this.Controls.Add(this.bow);
+            this.DoubleBuffered = true;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

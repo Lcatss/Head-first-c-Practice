@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    class Game//怪物死后还会成为攻击对象，第一把捡起的武器没有黑框，攻击距离好像没用，喝药无限回血bug，怪物死后标签不消失
+    class Game
     {
         public List<Enemy> Enemies;
         public Weapon WeaponInRoom;
@@ -15,7 +15,8 @@ namespace WindowsFormsApplication1
         private Player player;
         public Point PlayerLocation { get { return player.Location; } }
         public int PlayerHitPoints { get { return player.HitPoints; } }
-        public List<string> PlayerWeapons { get { return player.Weapons; } }
+        public List<Weapon> PlayerWeapons { get { return player.Weapons; } }
+        public Weapon EquippedWeapon { get { return player.EquippedWeapon; } }
 
         private int level = 0;
         public int Level { get { return level; } }
@@ -41,10 +42,7 @@ namespace WindowsFormsApplication1
             player.Equip(weaponName);
         }
 
-        public bool CheckPlayerInventory(string weaponName)
-        {
-            return player.Weapons.Contains(weaponName);
-        }
+
 
         public void HitPlayer(int maxDamage, Random random)
         {
@@ -67,6 +65,16 @@ namespace WindowsFormsApplication1
         {
             return new Point(boundaries.Left + random.Next(boundaries.Right / 10 - boundaries.Left / 10) * 10,
                 boundaries.Top + random.Next(boundaries.Bottom / 10 - boundaries.Top / 10) * 10);
+        }
+
+        public bool CheckPlayerInventory<T>()
+        {
+            foreach(Weapon weapon in PlayerWeapons)
+            {
+                if(weapon is T)
+                    return true;
+            }
+            return false;
         }
 
         public bool NewLevel(Random random)
@@ -94,9 +102,9 @@ namespace WindowsFormsApplication1
                     Enemies = new List<Enemy>();
                     Enemies.Add(new Bat(this, GetRandomLocation(random)));
                     Enemies.Add(new Ghost(this, GetRandomLocation(random)));
-                    if (!CheckPlayerInventory("Bow"))
+                    if (!CheckPlayerInventory<Bow>())
                         WeaponInRoom = new Bow(this, GetRandomLocation(random));
-                    else if (!CheckPlayerInventory("Blue Potion"))
+                    else if (!CheckPlayerInventory<BluePotion>())
                         WeaponInRoom = new BluePotion(this, GetRandomLocation(random));
                     break;
                 case 5:
@@ -116,9 +124,9 @@ namespace WindowsFormsApplication1
                     Enemies.Add(new Bat(this, GetRandomLocation(random)));
                     Enemies.Add(new Ghost(this, GetRandomLocation(random)));
                     Enemies.Add(new Ghoul(this, GetRandomLocation(random)));
-                    if(!CheckPlayerInventory("Mace"))
+                    if(!CheckPlayerInventory<Mace>())
                         WeaponInRoom = new Mace(this, GetRandomLocation(random));
-                    else if(!CheckPlayerInventory("Red Potion"))
+                    else if(!CheckPlayerInventory<RedPotion>())
                         WeaponInRoom = new RedPotion(this, GetRandomLocation(random));
                     break;
                 case 8:

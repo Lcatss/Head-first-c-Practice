@@ -3,37 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
     class Player:Mover
     {
         private Weapon equippedWeapon;
-        private int hitPoints;
-        public int HitPoints { get { return hitPoints; } }
+        public Weapon EquippedWeapon { get { return equippedWeapon; } }
 
-        private List<Weapon> inventory = new List<Weapon>();
-        public List<string> Weapons
+        private List<Weapon> weapons = new List<Weapon>();
+        public List<Weapon> Weapons
         {
             get
             {
-                List<string> names = new List<string>();
-                foreach (Weapon weapon in inventory)
-                    names.Add(weapon.Name);
-                return names;
+                return weapons;
             }
         }
 
         public Player(Game game, Point location)
-            : base(game, location)
-        {
-            hitPoints = 10;
-        }
+            : base(game, location,10)
+        {}
+       
 
-        public void Hit(int maxDamage, Random random)
-        {
-            hitPoints -= random.Next(1, maxDamage+1);
-        }
+
 
         public void IncreaseHealth(int health, Random random)
         {
@@ -42,7 +35,7 @@ namespace WindowsFormsApplication1
 
         public void Equip(string weaponName)
         {
-            foreach (Weapon weapon in inventory)
+            foreach (Weapon weapon in weapons)
             {
                 if (weapon.Name == weaponName)
                     equippedWeapon = weapon;
@@ -56,9 +49,9 @@ namespace WindowsFormsApplication1
             {
                 if (Nearby(game.WeaponInRoom.Location, 10))
                 {
-                    inventory.Add(game.WeaponInRoom);
+                    weapons.Add(game.WeaponInRoom);
                     game.WeaponInRoom.PickUpWeapon();
-                    if (inventory.Count == 1)
+                    if (weapons.Count == 1)
                         Equip(game.WeaponInRoom.Name);
 
                 }
@@ -73,7 +66,7 @@ namespace WindowsFormsApplication1
                 if (equippedWeapon is IPotion)
                 {
                     IPotion potion = equippedWeapon as IPotion;
-                    inventory.Remove(equippedWeapon);
+                    weapons.Remove(equippedWeapon);
                 }
             }
             

@@ -6,15 +6,19 @@ using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
-    abstract class Weapon:Mover//出了问题找找这儿
+    abstract class Weapon
     {
 
         private bool pickedUp;
         public bool PickedUp { get { return pickedUp; } }
 
+        protected Game game;
+        protected Point location;
+        public Point Location { get { return location; } }
+
 
         public Weapon(Game game, Point location)
-            :base(game,location)
+            
         {
             this.game = game;
             this.location = location;
@@ -38,13 +42,13 @@ namespace WindowsFormsApplication1
             {
                 foreach (Enemy enemy in game.Enemies)
                 {
-                    if (Nearby(enemy.Location, target, 30))
+                    if (Mover.Nearby(enemy.Location, target, 30)&&enemy.Alive)
                     {
                         enemy.Hit(damage, random);
                         return true;
                     }
                 }
-                target = Move(direction, target, game.Boundaries);
+                target = Mover.Move(direction, target, game.Boundaries);
             }
             return false;
         }
