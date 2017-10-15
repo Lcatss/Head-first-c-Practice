@@ -69,7 +69,7 @@ namespace WindowsFormsApplication1
                 boundaries.Top + random.Next(boundaries.Bottom / 10 - boundaries.Top / 10) * 10);
         }
 
-        public void NewLevel(Random random)
+        public bool NewLevel(Random random)
         {
             level++;
             switch (level)
@@ -122,11 +122,12 @@ namespace WindowsFormsApplication1
                         WeaponInRoom = new RedPotion(this, GetRandomLocation(random));
                     break;
                 case 8:
-                    Application.Exit();
-                    break;
+                    return false;
+
                     
 
             }
+            return true;
         }
     }
 }

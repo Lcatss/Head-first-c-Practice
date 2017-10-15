@@ -129,15 +129,19 @@ namespace WindowsFormsApplication1
             else
                 weaponControl.Visible = true;
             if (game.PlayerHitPoints <= 0)
-            {
+            {   
                 MessageBox.Show("You Died");
                 Application.Exit();
             }
             if (enemiesShown < 1)
             {
                 MessageBox.Show("You have defeated the enemies on this level");
-                game.NewLevel(random);
-                UpdateCharacters();
+                if (!game.NewLevel(random))
+                {
+                    Application.Exit();
+                }
+                else
+                    UpdateCharacters();
             }
 
 
@@ -335,6 +339,7 @@ namespace WindowsFormsApplication1
         {
 
         }
+
 
 
 

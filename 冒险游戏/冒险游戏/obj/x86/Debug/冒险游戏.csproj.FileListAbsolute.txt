@@ -11,3 +11,16 @@ D:\z\技术\电脑\C#\VC#2010\冒险游戏\冒险游戏\bin\Debug\冒险游戏.a
 D:\z\技术\电脑\C#\VC#2010\冒险游戏\冒险游戏\obj\x86\Debug\冒险游戏.TrustInfo.xml
 D:\z\技术\电脑\C#\VC#2010\冒险游戏\冒险游戏\obj\x86\Debug\冒险游戏.exe.manifest
 D:\z\技术\电脑\C#\VC#2010\冒险游戏\冒险游戏\obj\x86\Debug\冒险游戏.application
+D:\z\技术\电脑\C#\Head first c# practice\冒险游戏\冒险游戏\obj\x86\Debug\冒险游戏.exe
+D:\z\技术\电脑\C#\Head first c# practice\冒险游戏\冒险游戏\obj\x86\Debug\冒险游戏.pdb
+D:\z\技术\电脑\C#\Head first c# practice\冒险游戏\冒险游戏\bin\Debug\冒险游戏.exe.manifest
+D:\z\技术\电脑\C#\Head first c# practice\冒险游戏\冒险游戏\bin\Debug\冒险游戏.application
+D:\z\技术\电脑\C#\Head first c# practice\冒险游戏\冒险游戏\bin\Debug\冒险游戏.exe
+D:\z\技术\电脑\C#\Head first c# practice\冒险游戏\冒险游戏\bin\Debug\冒险游戏.pdb
+D:\z\技术\电脑\C#\Head first c# practice\冒险游戏\冒险游戏\obj\x86\Debug\冒险游戏.csprojResolveAssemblyReference.cache
+D:\z\技术\电脑\C#\Head first c# practice\冒险游戏\冒险游戏\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\z\技术\电脑\C#\Head first c# practice\冒险游戏\冒险游戏\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\z\技术\电脑\C#\Head first c# practice\冒险游戏\冒险游戏\obj\x86\Debug\冒险游戏.csproj.GenerateResource.Cache
+D:\z\技术\电脑\C#\Head first c# practice\冒险游戏\冒险游戏\obj\x86\Debug\冒险游戏.TrustInfo.xml
+D:\z\技术\电脑\C#\Head first c# practice\冒险游戏\冒险游戏\obj\x86\Debug\冒险游戏.exe.manifest
+D:\z\技术\电脑\C#\Head first c# practice\冒险游戏\冒险游戏\obj\x86\Debug\冒险游戏.application
