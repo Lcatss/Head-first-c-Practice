@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
         {
             if (HitPoints > 0)
             {
-                if (random.Next(3) > 0)
+                if (random.Next(3) == 0)
                     base.location = Move(FindPlayerDirection(game.PlayerLocation), game.Boundaries);
                 if (Nearby(game.PlayerLocation, 30))
                     game.HitPlayer(4, random);
