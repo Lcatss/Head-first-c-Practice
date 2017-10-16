@@ -84,8 +84,7 @@ namespace WindowsFormsApplication1
             {
                 case 1:
                     Enemies = new List<Enemy>();
-                    Enemies.Add(new Ghost(this, GetRandomLocation(random)));
-                    Enemies.Add(new Ghoul(this, GetRandomLocation(random)));
+                    Enemies.Add(new Bat(this, GetRandomLocation(random)));
                     WeaponInRoom = new Sword(this, GetRandomLocation(random));
 
                     break;
