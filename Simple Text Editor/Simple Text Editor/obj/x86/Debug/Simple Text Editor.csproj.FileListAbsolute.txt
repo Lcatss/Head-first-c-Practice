@@ -1,0 +1,7 @@
+D:\z\技术\电脑\C#\VC#2010\Simple Text Editor\Simple Text Editor\bin\Debug\Simple Text Editor.exe
+D:\z\技术\电脑\C#\VC#2010\Simple Text Editor\Simple Text Editor\bin\Debug\Simple Text Editor.pdb
+D:\z\技术\电脑\C#\VC#2010\Simple Text Editor\Simple Text Editor\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\z\技术\电脑\C#\VC#2010\Simple Text Editor\Simple Text Editor\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\z\技术\电脑\C#\VC#2010\Simple Text Editor\Simple Text Editor\obj\x86\Debug\Simple Text Editor.csproj.GenerateResource.Cache
+D:\z\技术\电脑\C#\VC#2010\Simple Text Editor\Simple Text Editor\obj\x86\Debug\Simple Text Editor.exe
+D:\z\技术\电脑\C#\VC#2010\Simple Text Editor\Simple Text Editor\obj\x86\Debug\Simple Text Editor.pdb
