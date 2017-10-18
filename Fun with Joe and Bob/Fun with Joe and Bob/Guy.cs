@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
+    [Serializable]
     class Guy
     {
         public string name;
@@ -20,7 +21,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                MessageBox.Show("I don't have enough cash to give you" + amount, name + "says...");
+                MessageBox.Show("I don't have enough cash to give you " + amount, name + "says...");
                 return 0;
             }
         }
@@ -34,7 +35,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                MessageBox.Show(amount + "isn't an amount I'll take", name + "says...");
+                MessageBox.Show(amount + " isn't an amount I'll take", name + "says...");
                 return 0;
             }
         }

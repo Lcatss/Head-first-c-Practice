@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace WindowsFormsApplication1
 {
@@ -17,8 +19,8 @@ namespace WindowsFormsApplication1
 
         public void UpdateForm()
         {
-            joeCashLabel.Text = Joe.name + "has $" + Joe.cash;
-            bobCashLabel.Text = Bob.name + "has $" + Bob.cash;
+            joeCashLabel.Text = Joe.name + " has $" + Joe.cash;
+            bobCashLabel.Text = Bob.name + " has $" + Bob.cash;
             bankCashLabel.Text = "The bank has $" + bank;
         }   
 
@@ -69,7 +71,27 @@ namespace WindowsFormsApplication1
             Joe.ReceiveCash(5);
             UpdateForm();
         }
+
+        private void saveJoe_Click(object sender, EventArgs e)
+        {
+            using (Stream output = File.Create("Guy_File.dat"))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(output, Joe);
+            }
+        }
         
         
+    
+
+        private void loadJoe_Click(object sender, EventArgs e)
+        {
+            using(Stream input=File.OpenRead("Guy_File.dat"))
+            {
+                BinaryFormatter formatter =new BinaryFormatter();
+                Joe=(Guy)formatter.Deserialize(input);
+            }
+            UpdateForm();
+        }
     }
 }
