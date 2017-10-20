@@ -79,8 +79,8 @@ namespace WindowsFormsApplication1
                 return;
             }
             saveFileDialog1.InitialDirectory = currentFolder;
-            saveFileDialog1.FileName = currentExcuse.Description + ".txt";
-            saveFileDialog1.Filter = "Text Files|*.txt";
+            saveFileDialog1.FileName = currentExcuse.Description + ".excuse";
+            saveFileDialog1.Filter = "Excuse Files|*.excuse";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 currentExcuse.Save(saveFileDialog1.FileName);
@@ -94,7 +94,7 @@ namespace WindowsFormsApplication1
             if (CheckChanged())
             {
                 openFileDialog1.InitialDirectory = currentFolder;
-                openFileDialog1.Filter = "Text Files|*.txt|All Files|*.*";
+                openFileDialog1.Filter = "Excuse Files|*.excuse";
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     currentExcuse = new Excuse(openFileDialog1.FileName);

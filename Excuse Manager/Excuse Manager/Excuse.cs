@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace WindowsFormsApplication1
 {
+    [Serializable]
     class Excuse
     {
         public string Description { get; set; }
@@ -24,29 +26,31 @@ namespace WindowsFormsApplication1
         }
         public Excuse(Random random, string folder)
         {
-            string[] fileNames = Directory.GetFiles(folder, "*.txt");
+            string[] fileNames = Directory.GetFiles(folder, "*.excuse");
             OpenFile(fileNames[random.Next(fileNames.Length)]);
         }
 
 
         public void OpenFile(string excusePath)
         {
-            using (StreamReader reader = new StreamReader(excusePath))
+            using (Stream input = File.OpenRead(excusePath))
             {
-                Description = reader.ReadLine();
-                Results = reader.ReadLine();
-                LastUsed = Convert.ToDateTime(reader.ReadLine());
+                BinaryFormatter bf = new BinaryFormatter();
+                Excuse temp=(Excuse)bf.Deserialize(input);
+                this.Description = temp.Description;
+                this.LastUsed = temp.LastUsed;
+                this.Results = temp.Results;
             }
         }
 
         public void Save(string excusePath)
         {
-            using (StreamWriter writer = new StreamWriter(excusePath))
+            BinaryFormatter bf = new BinaryFormatter();
+            using (Stream output = File.Create(excusePath))
             {
-                writer.WriteLine(Description);
-                writer.WriteLine(Results);
-                writer.WriteLine(LastUsed.ToString());
+                bf.Serialize(output, this);
             }
+
         }
 
 

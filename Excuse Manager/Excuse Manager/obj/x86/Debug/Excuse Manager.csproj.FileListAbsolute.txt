@@ -5,3 +5,4 @@ D:\z\技术\电脑\C#\Head first c# practice\Excuse Manager\Excuse Manager\obj\x
 D:\z\技术\电脑\C#\Head first c# practice\Excuse Manager\Excuse Manager\obj\x86\Debug\Excuse Manager.csproj.GenerateResource.Cache
 D:\z\技术\电脑\C#\Head first c# practice\Excuse Manager\Excuse Manager\obj\x86\Debug\Excuse Manager.exe
 D:\z\技术\电脑\C#\Head first c# practice\Excuse Manager\Excuse Manager\obj\x86\Debug\Excuse Manager.pdb
+D:\z\技术\电脑\C#\Head first c# practice\Excuse Manager\Excuse Manager\obj\x86\Debug\Excuse Manager.csprojResolveAssemblyReference.cache
