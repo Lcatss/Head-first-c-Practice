@@ -1,0 +1,4 @@
+D:\z\技术\电脑\C#\Head first c# practice\Hexdumper\Hexdumper\bin\Debug\Hexdumper.exe
+D:\z\技术\电脑\C#\Head first c# practice\Hexdumper\Hexdumper\bin\Debug\Hexdumper.pdb
+D:\z\技术\电脑\C#\Head first c# practice\Hexdumper\Hexdumper\obj\x86\Debug\Hexdumper.exe
+D:\z\技术\电脑\C#\Head first c# practice\Hexdumper\Hexdumper\obj\x86\Debug\Hexdumper.pdb
