@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.Serialization;
 
 namespace WindowsFormsApplication1
 {
@@ -93,13 +94,46 @@ namespace WindowsFormsApplication1
         {
             if (CheckChanged())
             {
+
                 openFileDialog1.InitialDirectory = currentFolder;
                 openFileDialog1.Filter = "Excuse Files|*.excuse";
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    currentExcuse = new Excuse(openFileDialog1.FileName);
-                    UpdateForm(false);
+                    bool clearForm=false;
+                    try
+                    {
+                        currentExcuse = new Excuse(openFileDialog1.FileName);
+                        try
+                        {
+                            UpdateForm(false);
+                        }
+                        catch (ArgumentOutOfRangeException
+                            )
+                        {
+                            clearForm = true;
+                        }
+                    }
+                    catch (SerializationException)
+                    {
+                        MessageBox.Show("The excuse file '" + openFileDialog1.FileName + "' is invalid");
+                        clearForm = true;
+
+                    }
+                    finally
+                    {
+                        if (clearForm)
+                        {
+                            currentExcuse.Description = "";
+                            currentExcuse.Results = "";
+                            currentExcuse.LastUsed = DateTime.Now;
+                        }
+                    }
+                            
                 }
+                        
+
+
+                
             }
 
         }

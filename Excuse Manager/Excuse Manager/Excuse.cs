@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+
 namespace WindowsFormsApplication1
 {
     [Serializable]
@@ -14,7 +15,7 @@ namespace WindowsFormsApplication1
         public string Results { get; set; }
         public DateTime LastUsed { get;  set; }
         public string ExcusePath { get; set; }
-
+        
         public Excuse()
         {
             ExcusePath="";
@@ -50,7 +51,7 @@ namespace WindowsFormsApplication1
             {
                 bf.Serialize(output, this);
             }
-
+            
         }
 
 
