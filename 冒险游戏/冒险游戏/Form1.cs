@@ -41,9 +41,6 @@ namespace WindowsFormsApplication1
 
             int enemiesShown = 0;
 
-
-            
-
             foreach (Enemy enemy in game.Enemies)
             {
                 PictureBox picturebox=GetPictureBox(enemy);
@@ -101,19 +98,16 @@ namespace WindowsFormsApplication1
                 weaponControl.Visible = false;
             else
                 weaponControl.Visible = true;
-           
-            if (game.PlayerHitPoints <= 0)//玩家死后
+            if (game.PlayerHitPoints <= 0)
             {
                 timer1.Enabled = false;
                 MessageBox.Show("You Died");  
                 Application.Exit();
             }
-
-            if (enemiesShown < 1)//打倒所有敌人后
+            if (enemiesShown < 1)
             {
                 timer1.Enabled = false;
-                MessageBox.Show("You have defeated the enemies on this level");
-                weaponControl.Visible = false;
+                MessageBox.Show("You have defeated the enemies on this level");  
                 if (!game.NewLevel(random))
                 {
                     Application.Exit();
@@ -219,6 +213,54 @@ namespace WindowsFormsApplication1
                 game.Equip("Red Potion");
             UpdateCharacters();
 
+        }
+
+        private void moveUp_Click(object sender, EventArgs e)
+        {
+            game.Move(Direction.Up, random);
+            UpdateCharacters();
+        }
+
+        private void moveLeft_Click(object sender, EventArgs e)
+        {
+            game.Move(Direction.Left, random);
+            UpdateCharacters();
+        }
+
+        private void moveRight_Click(object sender, EventArgs e)
+        {
+            game.Move(Direction.Right,random);
+            UpdateCharacters();
+        }
+
+        private void moveDown_Click(object sender, EventArgs e)
+        {
+            game.Move(Direction.Down, random);
+            UpdateCharacters();
+        }
+
+        private void attackUp_Click(object sender, EventArgs e)
+        {
+            game.Attack(Direction.Up, random);
+            UpdateCharacters();
+        }
+
+        private void attackLeft_Click(object sender, EventArgs e)
+        {
+            game.Attack(Direction.Left, random);
+            UpdateCharacters();
+        }
+
+        private void attackRight_Click(object sender, EventArgs e)
+        {
+            game.Attack(Direction.Right, random);
+            UpdateCharacters();
+        }
+
+        private void attackDown_Click(object sender, EventArgs e)
+        {
+            game.Attack(Direction.Down, random);
+            UpdateCharacters();
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

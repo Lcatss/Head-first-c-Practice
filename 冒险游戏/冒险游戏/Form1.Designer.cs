@@ -30,6 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.moveDown = new System.Windows.Forms.Button();
+            this.moveRight = new System.Windows.Forms.Button();
+            this.moveLeft = new System.Windows.Forms.Button();
+            this.moveUp = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.attackDown = new System.Windows.Forms.Button();
+            this.attackRight = new System.Windows.Forms.Button();
+            this.attackLeft = new System.Windows.Forms.Button();
+            this.attackUp = new System.Windows.Forms.Button();
             this.sword = new System.Windows.Forms.PictureBox();
             this.ghost = new System.Windows.Forms.PictureBox();
             this.bow = new System.Windows.Forms.PictureBox();
@@ -54,6 +64,8 @@
             this.ghostHitPoints = new System.Windows.Forms.ProgressBar();
             this.batHitPoints = new System.Windows.Forms.ProgressBar();
             this.playerHitPoints = new System.Windows.Forms.ProgressBar();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ghost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bow)).BeginInit();
@@ -70,6 +82,112 @@
             ((System.ComponentModel.ISupportInitialize)(this.ListMace)).BeginInit();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.moveDown);
+            this.groupBox1.Controls.Add(this.moveRight);
+            this.groupBox1.Controls.Add(this.moveLeft);
+            this.groupBox1.Controls.Add(this.moveUp);
+            this.groupBox1.Location = new System.Drawing.Point(618, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(185, 117);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Move";
+            // 
+            // moveDown
+            // 
+            this.moveDown.Location = new System.Drawing.Point(56, 82);
+            this.moveDown.Name = "moveDown";
+            this.moveDown.Size = new System.Drawing.Size(75, 23);
+            this.moveDown.TabIndex = 3;
+            this.moveDown.Text = "S";
+            this.moveDown.UseVisualStyleBackColor = true;
+            this.moveDown.Click += new System.EventHandler(this.moveDown_Click);
+            // 
+            // moveRight
+            // 
+            this.moveRight.Location = new System.Drawing.Point(94, 53);
+            this.moveRight.Name = "moveRight";
+            this.moveRight.Size = new System.Drawing.Size(75, 23);
+            this.moveRight.TabIndex = 2;
+            this.moveRight.Text = "D";
+            this.moveRight.UseVisualStyleBackColor = true;
+            this.moveRight.Click += new System.EventHandler(this.moveRight_Click);
+            // 
+            // moveLeft
+            // 
+            this.moveLeft.Location = new System.Drawing.Point(13, 53);
+            this.moveLeft.Name = "moveLeft";
+            this.moveLeft.Size = new System.Drawing.Size(75, 23);
+            this.moveLeft.TabIndex = 1;
+            this.moveLeft.Text = "A";
+            this.moveLeft.UseVisualStyleBackColor = true;
+            this.moveLeft.Click += new System.EventHandler(this.moveLeft_Click);
+            // 
+            // moveUp
+            // 
+            this.moveUp.Location = new System.Drawing.Point(56, 24);
+            this.moveUp.Name = "moveUp";
+            this.moveUp.Size = new System.Drawing.Size(75, 23);
+            this.moveUp.TabIndex = 0;
+            this.moveUp.Text = "W";
+            this.moveUp.UseVisualStyleBackColor = true;
+            this.moveUp.Click += new System.EventHandler(this.moveUp_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.attackDown);
+            this.groupBox2.Controls.Add(this.attackRight);
+            this.groupBox2.Controls.Add(this.attackLeft);
+            this.groupBox2.Controls.Add(this.attackUp);
+            this.groupBox2.Location = new System.Drawing.Point(618, 136);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(185, 112);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Attack";
+            // 
+            // attackDown
+            // 
+            this.attackDown.Location = new System.Drawing.Point(56, 82);
+            this.attackDown.Name = "attackDown";
+            this.attackDown.Size = new System.Drawing.Size(75, 23);
+            this.attackDown.TabIndex = 7;
+            this.attackDown.Text = "K";
+            this.attackDown.UseVisualStyleBackColor = true;
+            this.attackDown.Click += new System.EventHandler(this.attackDown_Click);
+            // 
+            // attackRight
+            // 
+            this.attackRight.Location = new System.Drawing.Point(94, 53);
+            this.attackRight.Name = "attackRight";
+            this.attackRight.Size = new System.Drawing.Size(75, 23);
+            this.attackRight.TabIndex = 6;
+            this.attackRight.Text = "L";
+            this.attackRight.UseVisualStyleBackColor = true;
+            this.attackRight.Click += new System.EventHandler(this.attackRight_Click);
+            // 
+            // attackLeft
+            // 
+            this.attackLeft.Location = new System.Drawing.Point(13, 53);
+            this.attackLeft.Name = "attackLeft";
+            this.attackLeft.Size = new System.Drawing.Size(75, 23);
+            this.attackLeft.TabIndex = 5;
+            this.attackLeft.Text = "J";
+            this.attackLeft.UseVisualStyleBackColor = true;
+            this.attackLeft.Click += new System.EventHandler(this.attackLeft_Click);
+            // 
+            // attackUp
+            // 
+            this.attackUp.Location = new System.Drawing.Point(56, 24);
+            this.attackUp.Name = "attackUp";
+            this.attackUp.Size = new System.Drawing.Size(75, 23);
+            this.attackUp.TabIndex = 4;
+            this.attackUp.Text = "I";
+            this.attackUp.UseVisualStyleBackColor = true;
+            this.attackUp.Click += new System.EventHandler(this.attackUp_Click);
             // 
             // sword
             // 
@@ -308,7 +426,7 @@
             this.tableLayoutPanel.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel.Controls.Add(this.label5, 0, 2);
             this.tableLayoutPanel.Controls.Add(this.playerHitPoints, 1, 0);
-            this.tableLayoutPanel.Location = new System.Drawing.Point(618, 118);
+            this.tableLayoutPanel.Location = new System.Drawing.Point(618, 254);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 4;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.66667F));
@@ -367,6 +485,8 @@
             this.Controls.Add(this.ghost);
             this.Controls.Add(this.bat);
             this.Controls.Add(this.ghoul);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.mace);
             this.Controls.Add(this.redPotion);
             this.Controls.Add(this.bluePotion);
@@ -382,6 +502,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Form1_PreviewKeyDown);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ghost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bow)).EndInit();
@@ -404,6 +526,16 @@
 
         #endregion
 
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button moveDown;
+        private System.Windows.Forms.Button moveRight;
+        private System.Windows.Forms.Button moveLeft;
+        private System.Windows.Forms.Button moveUp;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button attackDown;
+        private System.Windows.Forms.Button attackRight;
+        private System.Windows.Forms.Button attackLeft;
+        private System.Windows.Forms.Button attackUp;
         private System.Windows.Forms.PictureBox sword;
         private System.Windows.Forms.PictureBox ghost;
         private System.Windows.Forms.PictureBox bow;
