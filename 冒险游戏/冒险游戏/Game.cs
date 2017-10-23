@@ -15,6 +15,7 @@ namespace WindowsFormsApplication1
         private Player player;
         public Point PlayerLocation { get { return player.Location; } }
         public int PlayerHitPoints { get { return player.HitPoints; } }
+        public int MaxPlayerHitPoints { get { return player.MaxHitPoints; } }
         public List<Weapon> PlayerWeapons { get { return player.Weapons; } }
         public Weapon EquippedWeapon { get { return player.EquippedWeapon; } }
 

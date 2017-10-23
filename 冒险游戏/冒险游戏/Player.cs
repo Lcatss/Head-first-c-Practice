@@ -30,7 +30,11 @@ namespace WindowsFormsApplication1
 
         public void IncreaseHealth(int health, Random random)
         {
-            hitPoints += random.Next(1, health);
+            int increase=random.Next(1, health);
+            if (hitPoints + increase > maxHitPoints)
+                hitPoints = maxHitPoints;
+            else
+                hitPoints += increase;
         }
 
         public void Equip(string weaponName)

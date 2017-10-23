@@ -30,15 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ghoulHitPoints = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.ghostHitPoints = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.batHitPoints = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.playerHitPoints = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.moveDown = new System.Windows.Forms.Button();
             this.moveRight = new System.Windows.Forms.Button();
@@ -64,7 +55,15 @@
             this.ListBluePotion = new System.Windows.Forms.PictureBox();
             this.ListMace = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tableLayoutPanel1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.ghoulHitPoints = new System.Windows.Forms.ProgressBar();
+            this.ghostHitPoints = new System.Windows.Forms.ProgressBar();
+            this.batHitPoints = new System.Windows.Forms.ProgressBar();
+            this.playerHitPoints = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sword)).BeginInit();
@@ -81,106 +80,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ListSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListBluePotion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListMace)).BeginInit();
+            this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.42012F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.57988F));
-            this.tableLayoutPanel1.Controls.Add(this.ghoulHitPoints, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.ghostHitPoints, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.batHitPoints, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.playerHitPoints, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(618, 254);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(185, 133);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // ghoulHitPoints
-            // 
-            this.ghoulHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ghoulHitPoints.AutoSize = true;
-            this.ghoulHitPoints.Location = new System.Drawing.Point(130, 111);
-            this.ghoulHitPoints.Name = "ghoulHitPoints";
-            this.ghoulHitPoints.Size = new System.Drawing.Size(0, 15);
-            this.ghoulHitPoints.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 111);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 15);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Ghoul";
-            // 
-            // ghostHitPoints
-            // 
-            this.ghostHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ghostHitPoints.AutoSize = true;
-            this.ghostHitPoints.Location = new System.Drawing.Point(130, 80);
-            this.ghostHitPoints.Name = "ghostHitPoints";
-            this.ghostHitPoints.Size = new System.Drawing.Size(0, 15);
-            this.ghostHitPoints.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 80);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Ghost";
-            // 
-            // batHitPoints
-            // 
-            this.batHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.batHitPoints.AutoSize = true;
-            this.batHitPoints.Location = new System.Drawing.Point(130, 45);
-            this.batHitPoints.Name = "batHitPoints";
-            this.batHitPoints.Size = new System.Drawing.Size(0, 15);
-            this.batHitPoints.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Bat";
-            // 
-            // playerHitPoints
-            // 
-            this.playerHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.playerHitPoints.AutoSize = true;
-            this.playerHitPoints.Location = new System.Drawing.Point(130, 10);
-            this.playerHitPoints.Name = "playerHitPoints";
-            this.playerHitPoints.Size = new System.Drawing.Size(0, 15);
-            this.playerHitPoints.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Player";
             // 
             // groupBox1
             // 
@@ -469,8 +370,104 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 200;
+            this.timer1.Interval = 150;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Player";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(22, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 15);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Bat";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 15);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Ghost";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 111);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 15);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Ghoul";
+            // 
+            // tableLayoutPanel
+            // 
+            this.tableLayoutPanel.ColumnCount = 2;
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.42012F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.57988F));
+            this.tableLayoutPanel.Controls.Add(this.ghoulHitPoints, 1, 3);
+            this.tableLayoutPanel.Controls.Add(this.ghostHitPoints, 1, 2);
+            this.tableLayoutPanel.Controls.Add(this.batHitPoints, 1, 1);
+            this.tableLayoutPanel.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.label7, 0, 3);
+            this.tableLayoutPanel.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.label5, 0, 2);
+            this.tableLayoutPanel.Controls.Add(this.playerHitPoints, 1, 0);
+            this.tableLayoutPanel.Location = new System.Drawing.Point(618, 254);
+            this.tableLayoutPanel.Name = "tableLayoutPanel";
+            this.tableLayoutPanel.RowCount = 4;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.66667F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.66667F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.66667F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(185, 133);
+            this.tableLayoutPanel.TabIndex = 17;
+            // 
+            // ghoulHitPoints
+            // 
+            this.ghoulHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ghoulHitPoints.Location = new System.Drawing.Point(80, 111);
+            this.ghoulHitPoints.Name = "ghoulHitPoints";
+            this.ghoulHitPoints.Size = new System.Drawing.Size(100, 15);
+            this.ghoulHitPoints.TabIndex = 10;
+            // 
+            // ghostHitPoints
+            // 
+            this.ghostHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ghostHitPoints.Location = new System.Drawing.Point(80, 80);
+            this.ghostHitPoints.Name = "ghostHitPoints";
+            this.ghostHitPoints.Size = new System.Drawing.Size(100, 15);
+            this.ghostHitPoints.TabIndex = 9;
+            // 
+            // batHitPoints
+            // 
+            this.batHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.batHitPoints.Location = new System.Drawing.Point(80, 45);
+            this.batHitPoints.Name = "batHitPoints";
+            this.batHitPoints.Size = new System.Drawing.Size(100, 15);
+            this.batHitPoints.TabIndex = 8;
+            // 
+            // playerHitPoints
+            // 
+            this.playerHitPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.playerHitPoints.Location = new System.Drawing.Point(80, 10);
+            this.playerHitPoints.Name = "playerHitPoints";
+            this.playerHitPoints.Size = new System.Drawing.Size(100, 15);
+            this.playerHitPoints.TabIndex = 7;
             // 
             // Form1
             // 
@@ -478,6 +475,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(815, 399);
+            this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.player);
             this.Controls.Add(this.ListMace);
             this.Controls.Add(this.ListBluePotion);
@@ -489,7 +487,6 @@
             this.Controls.Add(this.ghoul);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.mace);
             this.Controls.Add(this.redPotion);
             this.Controls.Add(this.bluePotion);
@@ -505,8 +502,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Form1_PreviewKeyDown);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sword)).EndInit();
@@ -523,21 +518,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.ListSword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListBluePotion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListMace)).EndInit();
+            this.tableLayoutPanel.ResumeLayout(false);
+            this.tableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label ghoulHitPoints;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label ghostHitPoints;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label batHitPoints;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label playerHitPoints;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button moveDown;
         private System.Windows.Forms.Button moveRight;
@@ -563,6 +551,15 @@
         private System.Windows.Forms.PictureBox ListBluePotion;
         private System.Windows.Forms.PictureBox ListMace;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
+        private System.Windows.Forms.ProgressBar ghoulHitPoints;
+        private System.Windows.Forms.ProgressBar ghostHitPoints;
+        private System.Windows.Forms.ProgressBar batHitPoints;
+        private System.Windows.Forms.ProgressBar playerHitPoints;
 
     }
 }

@@ -22,8 +22,11 @@ namespace WindowsFormsApplication1
 
         public override void Attack(Direction direction, Random random)
         {
-            game.IncreasePlayerHealth(10, random);
-            used = true;
+            if (!used)
+            {
+                game.IncreasePlayerHealth(10, random);
+                used = true;
+            }
 
         }
     }

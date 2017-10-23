@@ -13,6 +13,8 @@ namespace WindowsFormsApplication1
         protected Point location;
         public Point Location { get { return location; } }
         protected Game game;
+        protected int maxHitPoints;
+        public int MaxHitPoints { get { return maxHitPoints; } }
         protected int hitPoints;
         public int HitPoints { get { return hitPoints; } }
         public bool Alive
@@ -25,6 +27,7 @@ namespace WindowsFormsApplication1
             this.game = game;
             this.location = location;
             this.hitPoints = hitPoints;
+            this.maxHitPoints = hitPoints;
 
 
         }
@@ -34,6 +37,8 @@ namespace WindowsFormsApplication1
         public void Hit(int maxDamage, Random random)
         {
             hitPoints -= random.Next(1, maxDamage + 1);
+            if (hitPoints < 0)
+                hitPoints = 0;
         }
 
         public bool Nearby(Point locationToCheck, int distance)

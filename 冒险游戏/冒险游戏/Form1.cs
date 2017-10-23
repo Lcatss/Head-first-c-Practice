@@ -31,7 +31,8 @@ namespace WindowsFormsApplication1
         public void UpdateCharacters()
         {
             player.Location = game.PlayerLocation;
-            playerHitPoints.Text = game.PlayerHitPoints.ToString();
+            if(game.MaxPlayerHitPoints!=0)
+                playerHitPoints.Value = 100*game.PlayerHitPoints / game.MaxPlayerHitPoints ;
 
             List<PictureBox> weaponList = new List<PictureBox>()
             {
@@ -43,20 +44,21 @@ namespace WindowsFormsApplication1
             foreach (Enemy enemy in game.Enemies)
             {
                 PictureBox picturebox=GetPictureBox(enemy);
-                Label label=GetLabel(enemy);
+                ProgressBar progressBar=GetProgressBar(enemy);
                 if (enemy.Alive)
                 {
                     picturebox.Location = enemy.Location;
                     picturebox.Visible = true;
                     picturebox.Enabled = true;
-                    label.Text = enemy.HitPoints.ToString();
+                    if(enemy.MaxHitPoints!=0)
+                        progressBar.Value = 100*enemy.HitPoints / enemy.MaxHitPoints;
                     enemiesShown++;
                 }
                 else
                 {
                     picturebox.Visible = false;
                     picturebox.Enabled = false;
-                    label.Text = "";
+                    progressBar.Value = 0;
                 }
             }
 
@@ -162,7 +164,7 @@ namespace WindowsFormsApplication1
             return null;
         }
 
-        private Label GetLabel(Mover mover)
+        private ProgressBar GetProgressBar(Mover mover)
         {
             if(mover is Player)
                 return playerHitPoints;
@@ -321,6 +323,13 @@ namespace WindowsFormsApplication1
             }
             UpdateCharacters();
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
 
 
 
