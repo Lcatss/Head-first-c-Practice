@@ -33,8 +33,6 @@ namespace WindowsFormsApplication1
         public void Move(Direction direcition, Random random)
         {
             player.Move(direcition);
-            foreach (Enemy enemy in Enemies)
-                enemy.Move(random);
         }
 
         public void Equip(string weaponName)
@@ -57,8 +55,6 @@ namespace WindowsFormsApplication1
         public void Attack(Direction direction, Random random)
         {
             player.Attack(direction, random);
-            foreach (Enemy enemy in Enemies)
-                enemy.Move(random);
         }
 
         private Point GetRandomLocation(Random random)

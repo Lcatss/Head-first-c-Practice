@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ghoulHitPoints = new System.Windows.Forms.Label();
@@ -62,6 +63,7 @@
             this.ListSword = new System.Windows.Forms.PictureBox();
             this.ListBluePotion = new System.Windows.Forms.PictureBox();
             this.ListMace = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -464,6 +466,12 @@
             this.ListMace.Visible = false;
             this.ListMace.Click += new System.EventHandler(this.ListMace_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 200;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -554,6 +562,7 @@
         private System.Windows.Forms.PictureBox ListSword;
         private System.Windows.Forms.PictureBox ListBluePotion;
         private System.Windows.Forms.PictureBox ListMace;
+        private System.Windows.Forms.Timer timer1;
 
     }
 }

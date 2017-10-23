@@ -98,18 +98,23 @@ namespace WindowsFormsApplication1
                 weaponControl.Visible = true;
             if (game.PlayerHitPoints <= 0)
             {
-                MessageBox.Show("You Died");
+                timer1.Enabled = false;
+                MessageBox.Show("You Died");  
                 Application.Exit();
             }
             if (enemiesShown < 1)
             {
-                MessageBox.Show("You have defeated the enemies on this level");
+                timer1.Enabled = false;
+                MessageBox.Show("You have defeated the enemies on this level");  
                 if (!game.NewLevel(random))
                 {
                     Application.Exit();
                 }
                 else
+                {
+                    timer1.Enabled = true;
                     UpdateCharacters();
+                }
             }
         }
 
@@ -306,6 +311,15 @@ namespace WindowsFormsApplication1
         private void Form1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            foreach (Enemy enemy in game.Enemies)
+            {
+                enemy.Move(random);
+            }
+            UpdateCharacters();
         }
 
 
