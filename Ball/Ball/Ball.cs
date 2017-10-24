@@ -7,12 +7,14 @@ namespace WindowsFormsApplication1
 {
     class Ball
     {
-        public event EventHandler BallInPlay;
-        public void OnBallInPlay(BallEventArgs e)
+        public event EventHandler<BallEventArgs> BallInPlay;
+        protected void OnBallInPlay(BallEventArgs e)
         {
-            EventHandler ballInPlay = BallInPlay;
+            EventHandler<BallEventArgs> ballInPlay = BallInPlay;
             if (ballInPlay != null)
                 ballInPlay(this, e);
         }
+        public Bat GetNewBat()
+        { return new Bat(new BatCallback(OnBallInPlay)); }
     }
 }

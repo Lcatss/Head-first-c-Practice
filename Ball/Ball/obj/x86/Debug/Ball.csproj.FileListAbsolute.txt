@@ -1,0 +1,7 @@
+D:\z\技术\电脑\C#\Head first c# practice\Ball\Ball\bin\Debug\Ball.exe
+D:\z\技术\电脑\C#\Head first c# practice\Ball\Ball\bin\Debug\Ball.pdb
+D:\z\技术\电脑\C#\Head first c# practice\Ball\Ball\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\z\技术\电脑\C#\Head first c# practice\Ball\Ball\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\z\技术\电脑\C#\Head first c# practice\Ball\Ball\obj\x86\Debug\Ball.csproj.GenerateResource.Cache
+D:\z\技术\电脑\C#\Head first c# practice\Ball\Ball\obj\x86\Debug\Ball.exe
+D:\z\技术\电脑\C#\Head first c# practice\Ball\Ball\obj\x86\Debug\Ball.pdb

@@ -1,0 +1,7 @@
+C:\Users\born9\AppData\Local\Temporary Projects\Whac-A-Mole\obj\x86\Debug\Whac_A_Mole.Form1.resources
+C:\Users\born9\AppData\Local\Temporary Projects\Whac-A-Mole\obj\x86\Debug\Whac_A_Mole.Properties.Resources.resources
+C:\Users\born9\AppData\Local\Temporary Projects\Whac-A-Mole\obj\x86\Debug\Whac-A-Mole.csproj.GenerateResource.Cache
+C:\Users\born9\AppData\Local\Temporary Projects\Whac-A-Mole\bin\Debug\Whac-A-Mole.exe
+C:\Users\born9\AppData\Local\Temporary Projects\Whac-A-Mole\bin\Debug\Whac-A-Mole.pdb
+C:\Users\born9\AppData\Local\Temporary Projects\Whac-A-Mole\obj\x86\Debug\Whac-A-Mole.exe
+C:\Users\born9\AppData\Local\Temporary Projects\Whac-A-Mole\obj\x86\Debug\Whac-A-Mole.pdb

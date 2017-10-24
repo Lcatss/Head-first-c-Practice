@@ -9,7 +9,7 @@ namespace WindowsFormsApplication1
     {
         public Pitcher(Ball ball)
         {
-            ball.BallInPlay += new EventHandler(ball_BallInPlay);
+            ball.BallInPlay +=ball_BallInPlay;
         }
 
 
@@ -23,6 +23,14 @@ namespace WindowsFormsApplication1
                 else
                     CoverFirstBase();
             }
+        }
+        void CatchBall()
+        {
+            Console.WriteLine("Pitcher:I caught the ball!");
+        }
+        void CoverFirstBase()
+        {
+            Console.WriteLine("Pitcher:I covered the first base!");
         }
     }
 }
