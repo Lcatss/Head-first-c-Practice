@@ -1,0 +1,102 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Drawing;
+
+namespace WindowsFormsApplication1
+{
+    class Hive
+    {
+        //constant declarations
+        private const int InitialBeeNumber = 6;
+        private const double InitialHoney = 3.2;
+        private const double MaxHoney = 15;
+        private const double HoneyPerNectar = 0.25;
+        private const int MaxBeeNumber = 8;
+        private const double BreedHoney = 4;
+
+        //variable declrations
+        public double Honey { get;private set; }
+        private Dictionary<string, Point> locations;
+        private int beeCount;
+
+        public Hive()
+        {
+            Honey=InitialHoney;
+            InitializeLocations();
+            Random random=new Random();
+            for (int i = 0; i < InitialBeeNumber; i++)
+			{
+                AddBee(random); 
+			}
+        }
+
+
+        public void InitializeLocations()
+        {
+            locations=new Dictionary<string,Point>()
+            {
+                {"Entranc",new Point(600,100)},
+                {"Nursery",new Point(95,174)},
+                {"HoneyFactory",new Point(157,98)},
+                {"Exit",new Point(194,213)},
+            };
+        }
+
+        
+
+        public bool AddHoney(double nectar)
+        {
+            double honeyToAdd = nectar * HoneyPerNectar;
+            if (honeyToAdd + Honey > MaxHoney)
+                return false;
+            else
+            {
+                Honey += honeyToAdd;
+                return true;
+            }
+        }
+
+        public bool ConsumeHoney(double amount)
+        {
+            if (amount > Honey)
+                return false;
+            else
+            {
+                Honey -= -amount;
+                return true;
+            }
+        }
+         
+
+        private void AddBee(Random random)
+        {
+            beeCount++;
+            int r1 = random.Next(100) - 50;
+            int r2 = random.Next(100) - 50;
+            Point startPoint = new Point(locations["Nursery"].X + r1,
+                locations["Nursery"].Y + r2);
+            Bee newBee = new Bee(beeCount, startPoint);
+            //once we have a system ,we need to add this bee to system
+        }
+
+        public void Go(Random random)
+        {
+            if (Honey > BreedHoney&&random.Next(10)==1)
+                AddBee(random);
+        }
+
+        public Point GetLocation(string location)
+        {
+            Point place = locations[location];
+            if (place == null)
+                throw new ArgumentException("It's a wrong location");
+            else
+                return place;
+        }
+        
+
+
+    }
+}

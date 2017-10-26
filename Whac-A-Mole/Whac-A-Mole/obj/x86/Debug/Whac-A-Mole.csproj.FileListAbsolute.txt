@@ -5,3 +5,10 @@ C:\Users\born9\AppData\Local\Temporary Projects\Whac-A-Mole\bin\Debug\Whac-A-Mol
 C:\Users\born9\AppData\Local\Temporary Projects\Whac-A-Mole\bin\Debug\Whac-A-Mole.pdb
 C:\Users\born9\AppData\Local\Temporary Projects\Whac-A-Mole\obj\x86\Debug\Whac-A-Mole.exe
 C:\Users\born9\AppData\Local\Temporary Projects\Whac-A-Mole\obj\x86\Debug\Whac-A-Mole.pdb
+D:\z\技术\电脑\C#\Head first c# practice\Whac-A-Mole\Whac-A-Mole\obj\x86\Debug\Whac-A-Mole.exe
+D:\z\技术\电脑\C#\Head first c# practice\Whac-A-Mole\Whac-A-Mole\obj\x86\Debug\Whac-A-Mole.pdb
+D:\z\技术\电脑\C#\Head first c# practice\Whac-A-Mole\Whac-A-Mole\bin\Debug\Whac-A-Mole.exe
+D:\z\技术\电脑\C#\Head first c# practice\Whac-A-Mole\Whac-A-Mole\bin\Debug\Whac-A-Mole.pdb
+D:\z\技术\电脑\C#\Head first c# practice\Whac-A-Mole\Whac-A-Mole\obj\x86\Debug\Whac_A_Mole.Form1.resources
+D:\z\技术\电脑\C#\Head first c# practice\Whac-A-Mole\Whac-A-Mole\obj\x86\Debug\Whac_A_Mole.Properties.Resources.resources
+D:\z\技术\电脑\C#\Head first c# practice\Whac-A-Mole\Whac-A-Mole\obj\x86\Debug\Whac-A-Mole.csproj.GenerateResource.Cache
