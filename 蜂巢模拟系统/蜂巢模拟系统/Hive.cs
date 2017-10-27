@@ -20,8 +20,9 @@ namespace WindowsFormsApplication1
         public double Honey { get;private set; }
         private Dictionary<string, Point> locations;
         private int beeCount;
+        private World world;
 
-        public Hive()
+        public Hive(World world)
         {
             Honey=InitialHoney;
             InitializeLocations();
@@ -30,6 +31,7 @@ namespace WindowsFormsApplication1
 			{
                 AddBee(random); 
 			}
+            this.world = world;
         }
 
 
@@ -72,13 +74,17 @@ namespace WindowsFormsApplication1
 
         private void AddBee(Random random)
         {
-            beeCount++;
-            int r1 = random.Next(100) - 50;
-            int r2 = random.Next(100) - 50;
-            Point startPoint = new Point(locations["Nursery"].X + r1,
-                locations["Nursery"].Y + r2);
-            Bee newBee = new Bee(beeCount, startPoint);
-            //once we have a system ,we need to add this bee to system
+            if (beeCount < MaxBeeNumber)
+            {
+                beeCount++;
+                int r1 = random.Next(100) - 50;
+                int r2 = random.Next(100) - 50;
+                Point startPoint = new Point(locations["Nursery"].X + r1,
+                    locations["Nursery"].Y + r2);
+                Bee newBee = new Bee(beeCount, startPoint, this, world);
+                world.Bees.Add(newBee);
+                //once we have a system ,we need to add this bee to system
+            }
         }
 
         public void Go(Random random)
@@ -91,7 +97,7 @@ namespace WindowsFormsApplication1
         {
             Point place = locations[location];
             if (place == null)
-                throw new ArgumentException("It's a wrong location");
+                throw new ArgumentException("It's a wrong location: "+location);
             else
                 return place;
         }

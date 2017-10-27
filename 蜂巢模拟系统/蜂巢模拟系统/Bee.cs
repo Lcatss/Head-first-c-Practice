@@ -17,6 +17,8 @@ namespace WindowsFormsApplication1
         public bool InsideHive { get;private set; }
         public double NectarCollected { get;private set; }
         public BeeState CurrentState { get;private set; }
+        private Hive hive;
+        private World world;
 
         private Point location;
         public Point Location { get { return location; } }
@@ -24,7 +26,7 @@ namespace WindowsFormsApplication1
         private int ID;
         private Flower destinationFlower;
 
-        public Bee(int id, Point location)
+        public Bee(int id, Point location,Hive hive,World world)
         {
             this.ID = id;
             this.Age = 0;
@@ -33,6 +35,8 @@ namespace WindowsFormsApplication1
             this.destinationFlower = null;
             this.NectarCollected = 0;
             this.CurrentState = BeeState.Idle;
+            this.hive = hive;
+            this.world = world;
         }
 
         public void Go(Random random)
@@ -43,13 +47,31 @@ namespace WindowsFormsApplication1
                 case BeeState.Idle:
                     if (Age > CareerSpan)
                         CurrentState = BeeState.Retired;
-                    else
+                    else if(world.Flowers.Count>0&&hive.ConsumeHoney(HoneyConsumed))
                     {
-                        //What we do when idle
+                        Flower flower=world.Flowers[random.Next(world.Flowers.Count)];
+                        if((flower.Nectar>=MinimumFlowerNectar&&flower.Alive))
+                        {
+                            destinationFlower=flower;
+                            CurrentState=BeeState.FlyingToFlower;
+                        }
                     }
                     break;
                 case BeeState.FlyingToFlower:
-                    //move towards flower
+                    if (!world.Flowers.Contains(destinationFlower))
+                        CurrentState = BeeState.ReturningToHive;
+                    else if (InsideHive)
+                    {
+                        if (MoveTowardsLocation(hive.GetLocation("Exit")))
+                        {
+                            InsideHive = false;
+                            location = hive.GetLocation("Entrance");
+                        }
+                    }
+                    else
+                        if (MoveTowardsLocation(destinationFlower.Location))
+                            CurrentState = BeeState.GatheringNectar;
+                 
                     break;
                 case BeeState.GatheringNectar:
                     double nectar = destinationFlower.HarvestNectar();
@@ -61,11 +83,16 @@ namespace WindowsFormsApplication1
                 case BeeState.ReturningToHive:
                     if (!InsideHive)
                     {
-                        //move towards hive
+                        if (MoveTowardsLocation(hive.GetLocation("Entrance")))
+                        {
+                            InsideHive = true;
+                            location = hive.GetLocation("Exit");
+                        }
                     }
                     else
                     {
-                        //what we do in the  Hive
+                        if (MoveTowardsLocation(hive.GetLocation("HoneyFactory")))
+                            CurrentState = BeeState.MakingHoney;
                     }
                     break;
                 case BeeState.MakingHoney:
@@ -76,7 +103,10 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                        //make honey from using nectar
+                        if (hive.AddHoney(0.5))
+                            NectarCollected -= 0.5;
+                        else
+                            NectarCollected = 0;
                     }
                     break;
                 case BeeState.Retired:
