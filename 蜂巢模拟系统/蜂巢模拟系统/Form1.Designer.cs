@@ -49,6 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Bees = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -61,7 +62,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(432, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(430, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -89,9 +90,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 263);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 382);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(432, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(430, 25);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -118,7 +119,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.Bees, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 27);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -128,14 +129,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(432, 236);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(430, 188);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // FrameRate
             // 
             this.FrameRate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.FrameRate.AutoSize = true;
-            this.FrameRate.Location = new System.Drawing.Point(219, 208);
+            this.FrameRate.Location = new System.Drawing.Point(218, 164);
             this.FrameRate.Name = "FrameRate";
             this.FrameRate.Size = new System.Drawing.Size(79, 15);
             this.FrameRate.TabIndex = 11;
@@ -145,7 +146,7 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 208);
+            this.label11.Location = new System.Drawing.Point(3, 164);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(87, 15);
             this.label11.TabIndex = 10;
@@ -155,7 +156,7 @@
             // 
             this.FramesRun.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.FramesRun.AutoSize = true;
-            this.FramesRun.Location = new System.Drawing.Point(219, 168);
+            this.FramesRun.Location = new System.Drawing.Point(218, 132);
             this.FramesRun.Name = "FramesRun";
             this.FramesRun.Size = new System.Drawing.Size(79, 15);
             this.FramesRun.TabIndex = 9;
@@ -165,7 +166,7 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 168);
+            this.label9.Location = new System.Drawing.Point(3, 132);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 15);
             this.label9.TabIndex = 8;
@@ -175,7 +176,7 @@
             // 
             this.NectarInFlowers.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.NectarInFlowers.AutoSize = true;
-            this.NectarInFlowers.Location = new System.Drawing.Point(219, 129);
+            this.NectarInFlowers.Location = new System.Drawing.Point(218, 101);
             this.NectarInFlowers.Name = "NectarInFlowers";
             this.NectarInFlowers.Size = new System.Drawing.Size(127, 15);
             this.NectarInFlowers.TabIndex = 7;
@@ -185,7 +186,7 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 129);
+            this.label7.Location = new System.Drawing.Point(3, 101);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(207, 15);
             this.label7.TabIndex = 6;
@@ -195,7 +196,7 @@
             // 
             this.HoneyInHive.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.HoneyInHive.AutoSize = true;
-            this.HoneyInHive.Location = new System.Drawing.Point(219, 90);
+            this.HoneyInHive.Location = new System.Drawing.Point(218, 70);
             this.HoneyInHive.Name = "HoneyInHive";
             this.HoneyInHive.Size = new System.Drawing.Size(95, 15);
             this.HoneyInHive.TabIndex = 5;
@@ -205,7 +206,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 90);
+            this.label5.Location = new System.Drawing.Point(3, 70);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(191, 15);
             this.label5.TabIndex = 4;
@@ -215,7 +216,7 @@
             // 
             this.Flowers.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Flowers.AutoSize = true;
-            this.Flowers.Location = new System.Drawing.Point(219, 51);
+            this.Flowers.Location = new System.Drawing.Point(218, 39);
             this.Flowers.Name = "Flowers";
             this.Flowers.Size = new System.Drawing.Size(63, 15);
             this.Flowers.TabIndex = 3;
@@ -225,7 +226,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 51);
+            this.label3.Location = new System.Drawing.Point(3, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 15);
             this.label3.TabIndex = 2;
@@ -235,7 +236,7 @@
             // 
             this.Bees.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Bees.AutoSize = true;
-            this.Bees.Location = new System.Drawing.Point(219, 12);
+            this.Bees.Location = new System.Drawing.Point(218, 8);
             this.Bees.Name = "Bees";
             this.Bees.Size = new System.Drawing.Size(39, 15);
             this.Bees.TabIndex = 1;
@@ -245,17 +246,28 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 12);
+            this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "# Bees";
             // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(0, 215);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(430, 167);
+            this.listBox1.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 288);
+            this.ClientSize = new System.Drawing.Size(430, 407);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -294,6 +306,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label Bees;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

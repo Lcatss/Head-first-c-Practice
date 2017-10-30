@@ -26,6 +26,10 @@ namespace WindowsFormsApplication1
         private int ID;
         private Flower destinationFlower;
 
+        public BeeStateChanged StateChanged;
+
+        
+
         public Bee(int id, Point location,Hive hive,World world)
         {
             this.ID = id;
@@ -41,19 +45,21 @@ namespace WindowsFormsApplication1
 
         public void Go(Random random)
         {
+            BeeState oldState = CurrentState;
+
             Age++;
             switch (CurrentState)
             {
                 case BeeState.Idle:
                     if (Age > CareerSpan)
                         CurrentState = BeeState.Retired;
-                    else if(world.Flowers.Count>0&&hive.ConsumeHoney(HoneyConsumed))
+                    else if (world.Flowers.Count > 0 && hive.ConsumeHoney(HoneyConsumed))
                     {
-                        Flower flower=world.Flowers[random.Next(world.Flowers.Count)];
-                        if((flower.Nectar>=MinimumFlowerNectar&&flower.Alive))
+                        Flower flower = world.Flowers[random.Next(world.Flowers.Count)];
+                        if ((flower.Nectar >= MinimumFlowerNectar && flower.Alive))
                         {
-                            destinationFlower=flower;
-                            CurrentState=BeeState.FlyingToFlower;
+                            destinationFlower = flower;
+                            CurrentState = BeeState.FlyingToFlower;
                         }
                     }
                     break;
@@ -112,6 +118,11 @@ namespace WindowsFormsApplication1
                 case BeeState.Retired:
                     //do nothing
                     break;
+            }
+
+            if (oldState != CurrentState && StateChanged != null)
+            {
+                StateChanged(ID, CurrentState.ToString());
             }
         
 

@@ -17,15 +17,17 @@ namespace WindowsFormsApplication1
         public Hive hive { get;private set; }
         public List<Bee> Bees { get;set; }
         public List<Flower> Flowers { get;private set; }
+        private BeeStateChanged stateChanged;
 
-        public World()
+        public World(BeeStateChanged StateChanged)
         {
+            this.stateChanged = StateChanged;
             Bees = new List<Bee>();
             Flowers = new List<Flower>();
             Random random = new Random();
             for (int i = 0; i < 10; i++)
                 AddFlower(random);
-            hive = new Hive(this);
+            hive = new Hive(this,StateChanged);
         }
 
         public void Go(Random random)
@@ -63,5 +65,18 @@ namespace WindowsFormsApplication1
             Flower newFlower = new Flower(location, random);
             Flowers.Add(newFlower);
         }
+
+
+        //public IEnumerable<int> BeesWorkInfo()
+        //{
+        //    int[] beeWorks = new int[6];
+        //    foreach (Bee bee in Bees)
+        //        beeWorks[(int)bee.CurrentState] += 1;
+        //    return beeWorks;
+        //}
+            
+
+
+
     }
 }
