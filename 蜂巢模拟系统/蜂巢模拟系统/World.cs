@@ -20,12 +20,12 @@ namespace WindowsFormsApplication1
 
         public World()
         {
-            hive = new Hive(this);
             Bees = new List<Bee>();
             Flowers = new List<Flower>();
             Random random = new Random();
             for (int i = 0; i < 10; i++)
                 AddFlower(random);
+            hive = new Hive(this);
         }
 
         public void Go(Random random)

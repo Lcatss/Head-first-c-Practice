@@ -4,3 +4,4 @@ D:\z\技术\电脑\C#\Head first c# practice\蜂巢模拟系统\蜂巢模拟系�
 D:\z\技术\电脑\C#\Head first c# practice\蜂巢模拟系统\蜂巢模拟系统\obj\x86\Debug\蜂巢模拟系统.csproj.GenerateResource.Cache
 D:\z\技术\电脑\C#\Head first c# practice\蜂巢模拟系统\蜂巢模拟系统\obj\x86\Debug\蜂巢模拟系统.exe
 D:\z\技术\电脑\C#\Head first c# practice\蜂巢模拟系统\蜂巢模拟系统\obj\x86\Debug\蜂巢模拟系统.pdb
+D:\z\技术\电脑\C#\Head first c# practice\蜂巢模拟系统\蜂巢模拟系统\obj\x86\Debug\WindowsFormsApplication1.Form1.resources

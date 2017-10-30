@@ -27,11 +27,12 @@ namespace WindowsFormsApplication1
             Honey=InitialHoney;
             InitializeLocations();
             Random random=new Random();
+            this.world = world;
             for (int i = 0; i < InitialBeeNumber; i++)
 			{
                 AddBee(random); 
 			}
-            this.world = world;
+            
         }
 
 
@@ -39,7 +40,7 @@ namespace WindowsFormsApplication1
         {
             locations=new Dictionary<string,Point>()
             {
-                {"Entranc",new Point(600,100)},
+                {"Entrance",new Point(600,100)},
                 {"Nursery",new Point(95,174)},
                 {"HoneyFactory",new Point(157,98)},
                 {"Exit",new Point(194,213)},
@@ -55,7 +56,7 @@ namespace WindowsFormsApplication1
                 return false;
             else
             {
-                Honey += honeyToAdd;
+               Honey  += honeyToAdd;
                 return true;
             }
         }
@@ -66,7 +67,7 @@ namespace WindowsFormsApplication1
                 return false;
             else
             {
-                Honey -= -amount;
+                Honey -= amount;
                 return true;
             }
         }
@@ -74,14 +75,14 @@ namespace WindowsFormsApplication1
 
         private void AddBee(Random random)
         {
-            if (beeCount < MaxBeeNumber)
+            if (world.Bees.Count < MaxBeeNumber)
             {
                 beeCount++;
                 int r1 = random.Next(100) - 50;
                 int r2 = random.Next(100) - 50;
                 Point startPoint = new Point(locations["Nursery"].X + r1,
                     locations["Nursery"].Y + r2);
-                Bee newBee = new Bee(beeCount, startPoint, this, world);
+                Bee newBee = new Bee(beeCount, startPoint,this,world);
                 world.Bees.Add(newBee);
                 //once we have a system ,we need to add this bee to system
             }
