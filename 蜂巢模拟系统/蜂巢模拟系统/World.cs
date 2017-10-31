@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
-    class World
+    [Serializable] class World
     {
         private const double NectarHarvestedPerNewFlower = 50;
         private const int FieldMinX = 15;
@@ -17,7 +17,7 @@ namespace WindowsFormsApplication1
         public Hive hive { get;private set; }
         public List<Bee> Bees { get;set; }
         public List<Flower> Flowers { get;private set; }
-        private BeeStateChanged stateChanged;
+        [NonSerialized] public BeeStateChanged stateChanged;
 
         public World(BeeStateChanged StateChanged)
         {
@@ -67,13 +67,13 @@ namespace WindowsFormsApplication1
         }
 
 
-        //public IEnumerable<int> BeesWorkInfo()
-        //{
-        //    int[] beeWorks = new int[6];
-        //    foreach (Bee bee in Bees)
-        //        beeWorks[(int)bee.CurrentState] += 1;
-        //    return beeWorks;
-        //}
+        public IEnumerable<int> BeesWorkInfo()
+        {
+            int[] beeWorks = new int[6];
+            foreach (Bee bee in Bees)
+                beeWorks[(int)bee.CurrentState] += 1;
+            return beeWorks;
+        }
             
 
 

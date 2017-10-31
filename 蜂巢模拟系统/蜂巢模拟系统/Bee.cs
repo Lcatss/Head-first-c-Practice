@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
-    class Bee
+    [Serializable] class Bee
     {
         private const double HoneyConsumed = 0.5;
         private const int MoveRate = 3;
@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1
         private int ID;
         private Flower destinationFlower;
 
-        public BeeStateChanged StateChanged;
+        [NonSerialized] public BeeStateChanged StateChanged;
 
         
 

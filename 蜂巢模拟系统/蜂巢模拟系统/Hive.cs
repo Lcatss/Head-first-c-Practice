@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
-    class Hive
+    [Serializable] class Hive
     {
         //constant declarations
         private const int InitialBeeNumber = 6;
@@ -21,7 +21,7 @@ namespace WindowsFormsApplication1
         private Dictionary<string, Point> locations;
         private int beeCount;
         private World world;
-        private BeeStateChanged stateChanged;
+        [NonSerialized] public BeeStateChanged stateChanged;
 
         public Hive(World world,BeeStateChanged StateChanged)
         {
