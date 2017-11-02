@@ -76,6 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer.cs" />
     <Compile Include="World.cs" />
+    <EmbeddedResource Include="BeeControl.resx">
+      <DependentUpon>BeeControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FieldForm.resx">
       <DependentUpon>FieldForm.cs</DependentUpon>
     </EmbeddedResource>

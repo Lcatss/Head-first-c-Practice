@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
     class BeeControl:PictureBox
     {
         private Timer animationTimer = new Timer();
+        private Bitmap[] cells = new Bitmap[4];
+
         public BeeControl()
         {
             animationTimer.Tick += new EventHandler(animationTimer_Tick);
@@ -16,6 +19,7 @@ namespace WindowsFormsApplication1
             animationTimer.Start();
             BackColor = System.Drawing.Color.Transparent;
             BackgroundImageLayout = ImageLayout.Stretch;
+            ResizeCells();
         }
 
         private int cell = 0;
@@ -26,17 +30,17 @@ namespace WindowsFormsApplication1
             switch (cell)
             {
                 case 1:
-                    BackgroundImage = Properties.Resources.Bee_animation_1; break;
+                    BackgroundImage = cells[0]; break;
                 case 2:
-                    BackgroundImage = Properties.Resources.Bee_animation_2; break;
+                    BackgroundImage = cells[1]; break;
                 case 3:
-                    BackgroundImage = Properties.Resources.Bee_animation_3; break;
+                    BackgroundImage = cells[2]; break;
                 case 4:
-                    BackgroundImage = Properties.Resources.Bee_animation_4; break;
+                    BackgroundImage = cells[3]; break;
                 case 5:
-                    BackgroundImage = Properties.Resources.Bee_animation_3; break;
+                    BackgroundImage = cells[2]; break;
                 default:
-                    BackgroundImage = Properties.Resources.Bee_animation_2;
+                    BackgroundImage = cells[1];
                     cell = 0; break;
             }
         }
@@ -47,5 +51,33 @@ namespace WindowsFormsApplication1
             if(disposing)
                 animationTimer.Dispose();
         }
+
+
+        private void ResizeCells()
+        {
+            cells[0] = Renderer.ResizeImage(Properties.Resources.Bee_animation_1, Width, Height);
+            cells[1] = Renderer.ResizeImage(Properties.Resources.Bee_animation_2, Width, Height);
+            cells[2] = Renderer.ResizeImage(Properties.Resources.Bee_animation_3, Width, Height);
+            cells[3] = Renderer.ResizeImage(Properties.Resources.Bee_animation_4, Width, Height);
+        }
+
+        private void InitializeComponent()
+        {
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // BeeControl
+            // 
+            this.Resize += new System.EventHandler(this.BeeControl_Resize);
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        private void BeeControl_Resize(object sender, EventArgs e)
+        {
+            ResizeCells();
+        }
+
     }
 }

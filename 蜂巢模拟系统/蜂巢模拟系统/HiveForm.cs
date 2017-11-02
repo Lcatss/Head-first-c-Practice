@@ -14,6 +14,8 @@ namespace WindowsFormsApplication1
         public HiveForm()
         {
             InitializeComponent();
+            BackgroundImage = Renderer.ResizeImage(Properties.Resources.Hive__inside_, ClientRectangle.Width, ClientRectangle.Height);
+
         }
 
         private void HiveForm_MouseClick(object sender, MouseEventArgs e)

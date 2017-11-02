@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1
         private const double InitialHoney = 3.2;
         private const double MaxHoney = 15;
         private const double HoneyPerNectar = 0.25;
-        private const int MaxBeeNumber = 8;
+        private const int MaxBeeNumber = 38;
         private const double BreedHoney = 4;
 
         //variable declrations

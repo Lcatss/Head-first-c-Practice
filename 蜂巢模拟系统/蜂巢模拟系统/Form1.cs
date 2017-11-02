@@ -35,7 +35,7 @@ namespace WindowsFormsApplication1
             fieldForm.Show(this);
             ResetSimulator();
 
-            timer1.Interval = 50 ;
+            timer1.Interval = 3 ;
             timer1.Tick+=new EventHandler(RunFrame);
             timer1.Enabled = false;
             UpdateStats(new TimeSpan());
