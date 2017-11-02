@@ -10,9 +10,9 @@ namespace WindowsFormsApplication1
     {
         private const double NectarHarvestedPerNewFlower = 50;
         private const int FieldMinX = 15;
-        private const int FieldMinY = 177;
-        private const int FieldMaxX = 690;
-        private const int FieldMaxY = 290;
+        private const int FieldMinY = 190;
+        private const int FieldMaxX = 750;
+        private const int FieldMaxY = 268;
 
         public Hive hive { get;private set; }
         public List<Bee> Bees { get;set; }

@@ -20,22 +20,39 @@ namespace WindowsFormsApplication1
         private DateTime end;
         private int framesRun = 0;
         public delegate void getBee_OnStateChanged(int ID, string message);
-        public getBee_OnStateChanged bee_OnStateChanged;
+
+        private HiveForm hiveForm = new HiveForm();
+        private FieldForm fieldForm = new FieldForm();
+        private Renderer renderer;
         
 
         public Form1()
         {
             InitializeComponent();
-            world = new World(new BeeStateChanged(SendMessage));
+
+            MoveChildForms();
+            hiveForm.Show(this);
+            fieldForm.Show(this);
+            ResetSimulator();
 
             timer1.Interval = 50 ;
             timer1.Tick+=new EventHandler(RunFrame);
             timer1.Enabled = false;
             UpdateStats(new TimeSpan());
-            bee_OnStateChanged = new getBee_OnStateChanged(SendMessage);
-            
-            
-            
+   
+        }
+
+        private void ResetSimulator()
+        {
+            framesRun = 0;
+            world = new World(new BeeStateChanged(SendMessage));
+            renderer = new Renderer(world, hiveForm, fieldForm);
+        }
+
+        private void MoveChildForms()
+        {
+            hiveForm.Location = new Point(Location.X + Width + 10, Location.Y);
+            fieldForm.Location = new Point(Location.X, Location.Y + Math.Max(Height, hiveForm.Height) + 10);
         }
 
         private void UpdateStats(TimeSpan frameDuration)
@@ -71,6 +88,7 @@ namespace WindowsFormsApplication1
         {
             framesRun++;
             world.Go(random);
+            renderer.Render();
             end = DateTime.Now;
             TimeSpan frameDuration = end - start;
             start = end;
@@ -96,10 +114,12 @@ namespace WindowsFormsApplication1
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            renderer.Reset();
+            ResetSimulator();
+
             timer1.Enabled = false;
-            world = new World(new BeeStateChanged(SendMessage));
-            framesRun = 0;
             toolStripButton1.Text = "Start simulation";
+           
             UpdateStats(new TimeSpan());
             listBox1.Items.Clear();
         }
@@ -107,6 +127,8 @@ namespace WindowsFormsApplication1
         private void SendMessage(int ID, string Message)
         {
             toolStripStatusLabel1.Text = "Bee #" + ID + ": " + Message;
+
+            //Linq实现的一个更新listbox的代码
             //var beeGroups =
             //    from bee in world.Bees
             //    group bee by bee.CurrentState into beeGroup
@@ -161,9 +183,11 @@ namespace WindowsFormsApplication1
                     world = currentWorld;
                     framesRun = currentFrames;
                 }
-                UpdateStats(new TimeSpan());
-                
             }
+            UpdateStats(new TimeSpan());
+            renderer.Reset();
+            renderer = new Renderer(world, hiveForm, fieldForm);
+            renderer.Render();
         }
 
         private void 保存SToolStripButton_Click(object sender, EventArgs e)
@@ -186,6 +210,22 @@ namespace WindowsFormsApplication1
                 timer1.Start();
 
         }
+
+        private void Form1_Move(object sender, EventArgs e)
+        {
+            MoveChildForms();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Rectangle rect = new Rectangle();
+            rect=Screen.GetWorkingArea(this);
+            this.Top=rect.Size.Height/2-380;
+            this.Left = rect.Size.Width / 2 - 391;
+        }
+
+        
+       
 
     }
 }

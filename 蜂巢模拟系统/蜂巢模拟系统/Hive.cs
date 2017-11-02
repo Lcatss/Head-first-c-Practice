@@ -42,10 +42,10 @@ namespace WindowsFormsApplication1
         {
             locations=new Dictionary<string,Point>()
             {
-                {"Entrance",new Point(600,100)},
-                {"Nursery",new Point(95,174)},
-                {"HoneyFactory",new Point(157,98)},
-                {"Exit",new Point(194,213)},
+                {"Entrance",new Point(729,113)},
+                {"Nursery",new Point(112,236)},
+                {"HoneyFactory",new Point(221,122)},
+                {"Exit",new Point(245,289)},
             };
         }
 

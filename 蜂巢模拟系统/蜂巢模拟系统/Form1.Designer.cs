@@ -33,6 +33,10 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.打开OToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.保存SToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.打印PToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -50,10 +54,6 @@
             this.Bees = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.打开OToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.保存SToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.打印PToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.toolStrip1.SuspendLayout();
@@ -74,7 +74,7 @@
             this.打印PToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(430, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(432, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -98,13 +98,47 @@
             this.toolStripButton2.Text = "Reset";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 27);
+            // 
+            // 打开OToolStripButton
+            // 
+            this.打开OToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.打开OToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("打开OToolStripButton.Image")));
+            this.打开OToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.打开OToolStripButton.Name = "打开OToolStripButton";
+            this.打开OToolStripButton.Size = new System.Drawing.Size(23, 24);
+            this.打开OToolStripButton.Text = "打开(&O)";
+            this.打开OToolStripButton.Click += new System.EventHandler(this.打开OToolStripButton_Click);
+            // 
+            // 保存SToolStripButton
+            // 
+            this.保存SToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.保存SToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("保存SToolStripButton.Image")));
+            this.保存SToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.保存SToolStripButton.Name = "保存SToolStripButton";
+            this.保存SToolStripButton.Size = new System.Drawing.Size(23, 24);
+            this.保存SToolStripButton.Text = "保存(&S)";
+            this.保存SToolStripButton.Click += new System.EventHandler(this.保存SToolStripButton_Click);
+            // 
+            // 打印PToolStripButton
+            // 
+            this.打印PToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.打印PToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("打印PToolStripButton.Image")));
+            this.打印PToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.打印PToolStripButton.Name = "打印PToolStripButton";
+            this.打印PToolStripButton.Size = new System.Drawing.Size(23, 24);
+            this.打印PToolStripButton.Text = "打印(&P)";
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 382);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 327);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(430, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(432, 25);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -141,14 +175,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(430, 188);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(432, 188);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // FrameRate
             // 
             this.FrameRate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.FrameRate.AutoSize = true;
-            this.FrameRate.Location = new System.Drawing.Point(218, 164);
+            this.FrameRate.Location = new System.Drawing.Point(219, 164);
             this.FrameRate.Name = "FrameRate";
             this.FrameRate.Size = new System.Drawing.Size(79, 15);
             this.FrameRate.TabIndex = 11;
@@ -168,7 +202,7 @@
             // 
             this.FramesRun.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.FramesRun.AutoSize = true;
-            this.FramesRun.Location = new System.Drawing.Point(218, 132);
+            this.FramesRun.Location = new System.Drawing.Point(219, 132);
             this.FramesRun.Name = "FramesRun";
             this.FramesRun.Size = new System.Drawing.Size(79, 15);
             this.FramesRun.TabIndex = 9;
@@ -188,7 +222,7 @@
             // 
             this.NectarInFlowers.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.NectarInFlowers.AutoSize = true;
-            this.NectarInFlowers.Location = new System.Drawing.Point(218, 101);
+            this.NectarInFlowers.Location = new System.Drawing.Point(219, 101);
             this.NectarInFlowers.Name = "NectarInFlowers";
             this.NectarInFlowers.Size = new System.Drawing.Size(127, 15);
             this.NectarInFlowers.TabIndex = 7;
@@ -208,7 +242,7 @@
             // 
             this.HoneyInHive.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.HoneyInHive.AutoSize = true;
-            this.HoneyInHive.Location = new System.Drawing.Point(218, 70);
+            this.HoneyInHive.Location = new System.Drawing.Point(219, 70);
             this.HoneyInHive.Name = "HoneyInHive";
             this.HoneyInHive.Size = new System.Drawing.Size(95, 15);
             this.HoneyInHive.TabIndex = 5;
@@ -228,7 +262,7 @@
             // 
             this.Flowers.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Flowers.AutoSize = true;
-            this.Flowers.Location = new System.Drawing.Point(218, 39);
+            this.Flowers.Location = new System.Drawing.Point(219, 39);
             this.Flowers.Name = "Flowers";
             this.Flowers.Size = new System.Drawing.Size(63, 15);
             this.Flowers.TabIndex = 3;
@@ -248,7 +282,7 @@
             // 
             this.Bees.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Bees.AutoSize = true;
-            this.Bees.Location = new System.Drawing.Point(218, 8);
+            this.Bees.Location = new System.Drawing.Point(219, 8);
             this.Bees.Name = "Bees";
             this.Bees.Size = new System.Drawing.Size(39, 15);
             this.Bees.TabIndex = 1;
@@ -271,42 +305,8 @@
             this.listBox1.ItemHeight = 15;
             this.listBox1.Location = new System.Drawing.Point(0, 215);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(430, 167);
+            this.listBox1.Size = new System.Drawing.Size(432, 112);
             this.listBox1.TabIndex = 3;
-            // 
-            // 打开OToolStripButton
-            // 
-            this.打开OToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.打开OToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("打开OToolStripButton.Image")));
-            this.打开OToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.打开OToolStripButton.Name = "打开OToolStripButton";
-            this.打开OToolStripButton.Size = new System.Drawing.Size(23, 24);
-            this.打开OToolStripButton.Text = "打开(&O)";
-            this.打开OToolStripButton.Click += new System.EventHandler(this.打开OToolStripButton_Click);
-            // 
-            // 保存SToolStripButton
-            // 
-            this.保存SToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.保存SToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("保存SToolStripButton.Image")));
-            this.保存SToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.保存SToolStripButton.Name = "保存SToolStripButton";
-            this.保存SToolStripButton.Size = new System.Drawing.Size(23, 24);
-            this.保存SToolStripButton.Text = "保存(&S)";
-            this.保存SToolStripButton.Click += new System.EventHandler(this.保存SToolStripButton_Click);
-            // 
-            // 打印PToolStripButton
-            // 
-            this.打印PToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.打印PToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("打印PToolStripButton.Image")));
-            this.打印PToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.打印PToolStripButton.Name = "打印PToolStripButton";
-            this.打印PToolStripButton.Size = new System.Drawing.Size(23, 24);
-            this.打印PToolStripButton.Text = "打印(&P)";
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // openFileDialog1
             // 
@@ -314,16 +314,18 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 407);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(432, 352);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Beehive Simulator";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Move += new System.EventHandler(this.Form1_Move);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
