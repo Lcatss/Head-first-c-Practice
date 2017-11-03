@@ -1,0 +1,7 @@
+D:\z\技术\电脑\C#\Head first c# practice\Draw a Bee and a Flower\Draw a Bee and a Flower\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\z\技术\电脑\C#\Head first c# practice\Draw a Bee and a Flower\Draw a Bee and a Flower\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\z\技术\电脑\C#\Head first c# practice\Draw a Bee and a Flower\Draw a Bee and a Flower\obj\x86\Debug\Draw a Bee and a Flower.csproj.GenerateResource.Cache
+D:\z\技术\电脑\C#\Head first c# practice\Draw a Bee and a Flower\Draw a Bee and a Flower\bin\Debug\Draw a Bee and a Flower.exe
+D:\z\技术\电脑\C#\Head first c# practice\Draw a Bee and a Flower\Draw a Bee and a Flower\bin\Debug\Draw a Bee and a Flower.pdb
+D:\z\技术\电脑\C#\Head first c# practice\Draw a Bee and a Flower\Draw a Bee and a Flower\obj\x86\Debug\Draw a Bee and a Flower.exe
+D:\z\技术\电脑\C#\Head first c# practice\Draw a Bee and a Flower\Draw a Bee and a Flower\obj\x86\Debug\Draw a Bee and a Flower.pdb
