@@ -159,7 +159,6 @@ namespace WindowsFormsApplication1
             int currentFrames=framesRun;
 
             timer1.Stop();
-            toolStripButton1.Text = "Resume Simulation";
             openFileDialog1.Filter = "Bee Files|*.bee";
             openFileDialog1.FileName = "BeeData";
             openFileDialog1.InitialDirectory = Application.StartupPath;
@@ -225,7 +224,8 @@ namespace WindowsFormsApplication1
             this.Left = rect.Size.Width / 2 - 391;
         }
 
-
+        
+       
 
     }
 }

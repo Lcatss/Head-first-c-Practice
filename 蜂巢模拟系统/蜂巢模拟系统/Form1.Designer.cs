@@ -324,6 +324,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Beehive Simulator";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Move += new System.EventHandler(this.Form1_Move);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
