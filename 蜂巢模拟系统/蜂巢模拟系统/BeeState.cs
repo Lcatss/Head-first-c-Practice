@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WindowsFormsApplication1
 {
-    [Serializable] enum BeeState
+    [Serializable] public enum BeeState
     {
         Idle,
         FlyingToFlower,

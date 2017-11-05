@@ -8,4 +8,4 @@ D:\z\技术\电脑\C#\Head first c# practice\蜂巢模拟系统\蜂巢模拟系�
 D:\z\技术\电脑\C#\Head first c# practice\蜂巢模拟系统\蜂巢模拟系统\obj\x86\Debug\蜂巢模拟系统.csprojResolveAssemblyReference.cache
 D:\z\技术\电脑\C#\Head first c# practice\蜂巢模拟系统\蜂巢模拟系统\obj\x86\Debug\WindowsFormsApplication1.HiveForm.resources
 D:\z\技术\电脑\C#\Head first c# practice\蜂巢模拟系统\蜂巢模拟系统\obj\x86\Debug\WindowsFormsApplication1.FieldForm.resources
-D:\z\技术\电脑\C#\Head first c# practice\蜂巢模拟系统\蜂巢模拟系统\obj\x86\Debug\WindowsFormsApplication1.BeeControl.resources
+D:\z\技术\电脑\C#\Head first c# practice\蜂巢模拟系统\蜂巢模拟系统\obj\x86\Debug\WindowsFormsApplication1.Menu.resources

@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
-    [Serializable] class Flower
+    [Serializable] public class Flower
     {
         public Point Location { get;private set; }
         public int Age { get;private  set; }

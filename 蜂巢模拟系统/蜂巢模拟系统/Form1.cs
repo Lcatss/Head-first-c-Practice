@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
+using System.Drawing.Printing;
 
 namespace WindowsFormsApplication1
 {
@@ -23,6 +24,7 @@ namespace WindowsFormsApplication1
 
         private HiveForm hiveForm = new HiveForm();
         private FieldForm fieldForm = new FieldForm();
+        private Menu menu;
         private Renderer renderer;
         
 
@@ -30,16 +32,27 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
 
+            ResetSimulator();
+            menu = new Menu(world,this,hiveForm,fieldForm);
             MoveChildForms();
+            menu.Show(this);
             hiveForm.Show(this);
             fieldForm.Show(this);
-            ResetSimulator();
+            
 
-            timer1.Interval = 3 ;
+            timer1.Interval = 1;
+            timer2.Interval = 3 * timer1.Interval;
             timer1.Tick+=new EventHandler(RunFrame);
             timer1.Enabled = false;
             UpdateStats(new TimeSpan());
    
+        }
+
+        public void ChangeFPS(int fps)
+        {
+            int interval = 1000 / fps;
+            timer1.Interval = interval;
+            timer2.Interval = interval * 3;
         }
 
         private void ResetSimulator()
@@ -53,6 +66,7 @@ namespace WindowsFormsApplication1
         {
             hiveForm.Location = new Point(Location.X + Width + 10, Location.Y);
             fieldForm.Location = new Point(Location.X, Location.Y + Math.Max(Height, hiveForm.Height) + 10);
+            menu.Location = new Point(Location.X + Width + 10 + hiveForm.Width + 10, Location.Y);
         }
 
         private void UpdateStats(TimeSpan frameDuration)
@@ -88,12 +102,14 @@ namespace WindowsFormsApplication1
         {
             framesRun++;
             world.Go(random);
-            renderer.Render();
             end = DateTime.Now;
             TimeSpan frameDuration = end - start;
             start = end;
             
             UpdateStats(frameDuration);
+
+            hiveForm.Invalidate();
+            fieldForm.Invalidate();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -109,12 +125,12 @@ namespace WindowsFormsApplication1
                 timer1.Stop();
                 
             }
+            menu.InitializeFinish();
             
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            renderer.Reset();
             ResetSimulator();
 
             timer1.Enabled = false;
@@ -185,9 +201,10 @@ namespace WindowsFormsApplication1
                 }
             }
             UpdateStats(new TimeSpan());
-            renderer.Reset();
+
             renderer = new Renderer(world, hiveForm, fieldForm);
-            renderer.Render();
+            menu.InitializeFinish();
+
         }
 
         private void 保存SToolStripButton_Click(object sender, EventArgs e)
@@ -224,8 +241,9 @@ namespace WindowsFormsApplication1
             this.Left = rect.Size.Width / 2 - 391;
         }
 
-        
-       
-
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            renderer.AnimatedBees();
+        }
     }
 }

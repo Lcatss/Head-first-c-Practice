@@ -6,14 +6,14 @@ using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
-    [Serializable] class Hive
+    [Serializable] public class Hive
     {
         //constant declarations
         private const int InitialBeeNumber = 6;
         private const double InitialHoney = 3.2;
         private const double MaxHoney = 15;
         private const double HoneyPerNectar = 0.25;
-        private const int MaxBeeNumber = 38;
+        public  int MaxBeeNumber = 38;
         private const double BreedHoney = 4;
 
         //variable declrations

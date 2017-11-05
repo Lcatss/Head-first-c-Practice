@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
-    [Serializable] class Bee
+    [Serializable] public class Bee
     {
         private const double HoneyConsumed = 0.5;
         private const int MoveRate = 3;

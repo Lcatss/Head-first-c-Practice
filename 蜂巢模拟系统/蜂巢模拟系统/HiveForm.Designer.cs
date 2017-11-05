@@ -33,7 +33,6 @@
             // HiveForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Hive__inside_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(328, 377);
             this.ControlBox = false;
@@ -42,7 +41,7 @@
             this.Name = "HiveForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "The Hive";
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.HiveForm_MouseClick);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.HiveForm_Paint);
             this.ResumeLayout(false);
 
         }

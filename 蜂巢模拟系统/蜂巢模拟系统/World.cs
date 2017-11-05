@@ -6,13 +6,15 @@ using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
-    [Serializable] class World
+    [Serializable] public class World
     {
         private const double NectarHarvestedPerNewFlower = 50;
         private const int FieldMinX = 15;
         private const int FieldMinY = 190;
         private const int FieldMaxX = 750;
         private const int FieldMaxY = 268;
+        private const int InitialFlowerNumber = 10;
+        public int MaxFlower = 60;
 
         public Hive hive { get;private set; }
         public List<Bee> Bees { get;set; }
@@ -25,7 +27,7 @@ namespace WindowsFormsApplication1
             Bees = new List<Bee>();
             Flowers = new List<Flower>();
             Random random = new Random();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < InitialFlowerNumber; i++)
                 AddFlower(random);
             hive = new Hive(this,StateChanged);
         }
@@ -51,7 +53,7 @@ namespace WindowsFormsApplication1
                 if (!flower.Alive)
                     Flowers.Remove(flower);
             }
-            if (totalNectarHarvested > NectarHarvestedPerNewFlower)
+            if (totalNectarHarvested > NectarHarvestedPerNewFlower&&Flowers.Count<=MaxFlower)
             {
                 foreach (Flower flower in Flowers)
                     flower.NectarHarVested = 0;

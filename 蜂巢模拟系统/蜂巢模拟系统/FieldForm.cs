@@ -11,10 +11,15 @@ namespace WindowsFormsApplication1
 {
     public partial class FieldForm : Form
     {
+        public Renderer Renderer{get; set;}
+
+
         public FieldForm()
         {
             InitializeComponent();
         }
+
+
 
         private void FieldForm_MouseClick(object sender, MouseEventArgs e)
         {
@@ -24,6 +29,11 @@ namespace WindowsFormsApplication1
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
             MessageBox.Show(e.Location.X + "," + e.Location.Y);
+        }
+
+        private void FieldForm_Paint(object sender, PaintEventArgs e)
+        {
+            Renderer.PaintField(e.Graphics);
         }
     }
 }
