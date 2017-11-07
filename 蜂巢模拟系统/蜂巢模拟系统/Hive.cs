@@ -11,7 +11,7 @@ namespace WindowsFormsApplication1
         //constant declarations
         private const int InitialBeeNumber = 6;
         private const double InitialHoney = 3.2;
-        private const double MaxHoney = 15;
+        private const double MaxHoney = 30;
         private const double HoneyPerNectar = 0.25;
         public  int MaxBeeNumber = 38;
         private const double BreedHoney = 4;
@@ -75,7 +75,7 @@ namespace WindowsFormsApplication1
         }
          
 
-        private void AddBee(Random random)
+        public void AddBee(Random random)
         {
             if (world.Bees.Count < MaxBeeNumber)
             {
@@ -92,8 +92,10 @@ namespace WindowsFormsApplication1
 
         public void Go(Random random)
         {
-            if (Honey > BreedHoney&&random.Next(10)==1)
-                AddBee(random);
+            if (random.Next(100) == 1)
+
+                    AddBee(random);
+            
         }
 
         public Point GetLocation(string location)

@@ -51,14 +51,14 @@
             // MaxBeeNumberBar
             // 
             this.MaxBeeNumberBar.Location = new System.Drawing.Point(212, 86);
-            this.MaxBeeNumberBar.Maximum = 200;
+            this.MaxBeeNumberBar.Maximum = 100;
             this.MaxBeeNumberBar.Minimum = 1;
             this.MaxBeeNumberBar.Name = "MaxBeeNumberBar";
             this.MaxBeeNumberBar.Size = new System.Drawing.Size(104, 56);
             this.MaxBeeNumberBar.TabIndex = 1;
-            this.MaxBeeNumberBar.TickFrequency = 20;
+            this.MaxBeeNumberBar.TickFrequency = 10;
             this.MaxBeeNumberBar.Value = 30;
-            this.MaxBeeNumberBar.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.MaxBeeNumberBar.Scroll += new System.EventHandler(this.MaxBeeNumberBar_Scroll);
             // 
             // InitialBeeNumber
             // 
@@ -72,12 +72,12 @@
             // InitialBeeNumberBar
             // 
             this.InitialBeeNumberBar.Location = new System.Drawing.Point(212, 24);
-            this.InitialBeeNumberBar.Maximum = 200;
+            this.InitialBeeNumberBar.Maximum = 50;
             this.InitialBeeNumberBar.Minimum = 1;
             this.InitialBeeNumberBar.Name = "InitialBeeNumberBar";
             this.InitialBeeNumberBar.Size = new System.Drawing.Size(104, 56);
             this.InitialBeeNumberBar.TabIndex = 3;
-            this.InitialBeeNumberBar.TickFrequency = 20;
+            this.InitialBeeNumberBar.TickFrequency = 5;
             this.InitialBeeNumberBar.Value = 6;
             this.InitialBeeNumberBar.Scroll += new System.EventHandler(this.InitialBeeNumberBar_Scroll);
             // 
@@ -93,12 +93,12 @@
             // FpsBar
             // 
             this.FpsBar.Location = new System.Drawing.Point(212, 137);
-            this.FpsBar.Maximum = 1000;
+            this.FpsBar.Maximum = 100;
             this.FpsBar.Minimum = 1;
             this.FpsBar.Name = "FpsBar";
             this.FpsBar.Size = new System.Drawing.Size(104, 56);
             this.FpsBar.TabIndex = 5;
-            this.FpsBar.TickFrequency = 100;
+            this.FpsBar.TickFrequency = 10;
             this.FpsBar.Value = 50;
             this.FpsBar.Scroll += new System.EventHandler(this.FpsBar_Scroll);
             // 
@@ -117,6 +117,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Menu";
             ((System.ComponentModel.ISupportInitialize)(this.MaxBeeNumberBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InitialBeeNumberBar)).EndInit();

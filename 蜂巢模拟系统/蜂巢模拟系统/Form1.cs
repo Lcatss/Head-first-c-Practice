@@ -33,7 +33,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
 
             ResetSimulator();
-            menu = new Menu(world,this,hiveForm,fieldForm);
+            menu = new Menu(world,this,hiveForm,fieldForm,random);
             MoveChildForms();
             menu.Show(this);
             hiveForm.Show(this);
@@ -57,9 +57,18 @@ namespace WindowsFormsApplication1
 
         private void ResetSimulator()
         {
+            bool hasMenu = menu != null;
+            if (hasMenu)
+                menu.Dispose();
             framesRun = 0;
             world = new World(new BeeStateChanged(SendMessage));
             renderer = new Renderer(world, hiveForm, fieldForm);
+            menu = new Menu(world, this, hiveForm, fieldForm, random);
+            if (hasMenu)
+            {
+                menu.Show(this);
+                MoveChildForms();
+            }
         }
 
         private void MoveChildForms()
@@ -69,7 +78,7 @@ namespace WindowsFormsApplication1
             menu.Location = new Point(Location.X + Width + 10 + hiveForm.Width + 10, Location.Y);
         }
 
-        private void UpdateStats(TimeSpan frameDuration)
+        public void UpdateStats(TimeSpan frameDuration)
         {
             Bees.Text = world.Bees.Count.ToString();
             Flowers.Text = world.Flowers.Count.ToString();
@@ -134,10 +143,11 @@ namespace WindowsFormsApplication1
             ResetSimulator();
 
             timer1.Enabled = false;
-            toolStripButton1.Text = "Start simulation";
+            toolStripButton1.Text = "Start Simulation";
            
             UpdateStats(new TimeSpan());
             listBox1.Items.Clear();
+            
         }
 
         private void SendMessage(int ID, string Message)
