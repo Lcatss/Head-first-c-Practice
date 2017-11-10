@@ -142,6 +142,9 @@ namespace WindowsFormsApplication1
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            if (framesRun == 0)
+                SendMessage("开始模拟");
+
             if (timer1.Enabled == false)
             {
                 toolStripButton1.Text = "Pause Simulation";
@@ -154,6 +157,8 @@ namespace WindowsFormsApplication1
                 
             }
             menu.InitializeFinish();
+
+            
             
         }
 
