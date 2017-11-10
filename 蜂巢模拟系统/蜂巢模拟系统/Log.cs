@@ -28,7 +28,7 @@ namespace WindowsFormsApplication1
 
         private void AddNewLog(string message)
         {
-            this.log += message += "\r\n";
+            this.log += message += "\r\n\r\n";
             textBox1.Text=log;
             textBox1.SelectionStart = textBox1.Text.Length;
             textBox1.ScrollToCaret();

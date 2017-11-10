@@ -113,9 +113,16 @@ namespace WindowsFormsApplication1
             for (int i = 0; i < 6; i++)
             {
                 if (beeWorks[i] == 1)
-                    listBox1.Items.Add(((BeeState)i).ToString() + ": " + beeWorks[i] + " bee");
+                {
+                    listBox1.Items.Add(((BeeState)i).ToString() + ": " + beeWorks[i] + " 只蜜蜂");
+                    listBox1.Items.Add("");
+                }
                 else if (beeWorks[i] != 0)
-                    listBox1.Items.Add(((BeeState)i).ToString() + ": " + beeWorks[i] + " bees");
+                {
+                    listBox1.Items.Add(((BeeState)i).ToString() + ": " + beeWorks[i] + " 只蜜蜂");
+                    listBox1.Items.Add("");
+                }
+                
             }
         }
 

@@ -7,11 +7,11 @@ namespace WindowsFormsApplication1
 {
     [Serializable] public enum BeeState
     {
-        Idle,
-        FlyingToFlower,
-        GatheringNectar,
-        ReturningToHive,
-        MakingHoney,
-        Retired,
+        空闲,
+        飞向花朵,
+        收集花蜜,
+        返回蜂巢,
+        制造蜂蜜,
+        退休,
     }
 }

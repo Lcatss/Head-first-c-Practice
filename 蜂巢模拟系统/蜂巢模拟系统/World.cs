@@ -40,7 +40,7 @@ namespace WindowsFormsApplication1
             {
                 Bee bee = Bees[i];
                 bee.Go(random);
-                if (bee.CurrentState == BeeState.Retired)
+                if (bee.CurrentState == BeeState.退休)
                     Bees.Remove(bee);
             }
 

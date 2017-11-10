@@ -38,7 +38,7 @@ namespace WindowsFormsApplication1
             this.InsideHive = true;
             this.destinationFlower = null;
             this.NectarCollected = 0;
-            this.CurrentState = BeeState.Idle;
+            this.CurrentState = BeeState.空闲;
             this.hive = hive;
             this.world = world;
         }
@@ -50,22 +50,22 @@ namespace WindowsFormsApplication1
             Age++;
             switch (CurrentState)
             {
-                case BeeState.Idle:
+                case BeeState.空闲:
                     if (Age > CareerSpan)
-                        CurrentState = BeeState.Retired;
+                        CurrentState = BeeState.退休;
                     else if (world.Flowers.Count > 0 && hive.ConsumeHoney(HoneyConsumed))
                     {
                         Flower flower = world.Flowers[random.Next(world.Flowers.Count)];
                         if ((flower.Nectar >= MinimumFlowerNectar && flower.Alive))
                         {
                             destinationFlower = flower;
-                            CurrentState = BeeState.FlyingToFlower;
+                            CurrentState = BeeState.飞向花朵;
                         }
                     }
                     break;
-                case BeeState.FlyingToFlower:
+                case BeeState.飞向花朵:
                     if (!world.Flowers.Contains(destinationFlower))
-                        CurrentState = BeeState.ReturningToHive;
+                        CurrentState = BeeState.返回蜂巢;
                     else if (InsideHive)
                     {
                         if (MoveTowardsLocation(hive.GetLocation("Exit")))
@@ -76,17 +76,17 @@ namespace WindowsFormsApplication1
                     }
                     else
                         if (MoveTowardsLocation(destinationFlower.Location))
-                            CurrentState = BeeState.GatheringNectar;
+                            CurrentState = BeeState.收集花蜜;
                  
                     break;
-                case BeeState.GatheringNectar:
+                case BeeState.收集花蜜:
                     double nectar = destinationFlower.HarvestNectar();
                     if (nectar > 0)
                         NectarCollected += nectar;
                     else
-                        CurrentState = BeeState.ReturningToHive;
+                        CurrentState = BeeState.返回蜂巢;
                     break;
-                case BeeState.ReturningToHive:
+                case BeeState.返回蜂巢:
                     if (!InsideHive)
                     {
                         if (MoveTowardsLocation(hive.GetLocation("Entrance")))
@@ -98,14 +98,14 @@ namespace WindowsFormsApplication1
                     else
                     {
                         if (MoveTowardsLocation(hive.GetLocation("HoneyFactory")))
-                            CurrentState = BeeState.MakingHoney;
+                            CurrentState = BeeState.制造蜂蜜;
                     }
                     break;
-                case BeeState.MakingHoney:
+                case BeeState.制造蜂蜜:
                     if (NectarCollected < 0.5)
                     {
                         NectarCollected = 0;
-                        CurrentState = BeeState.Idle;
+                        CurrentState = BeeState.空闲;
                     }
                     else
                     {
@@ -115,14 +115,14 @@ namespace WindowsFormsApplication1
                             NectarCollected = 0;
                     }
                     break;
-                case BeeState.Retired:
+                case BeeState.退休:
                     //do nothing
                     break;
             }
 
             if (oldState != CurrentState && Changed != null)
             {
-                Changed("Bee #"+ID+": "+ CurrentState.ToString());
+                Changed("蜜蜂 #"+ID+": "+ CurrentState.ToString());
             }
         
 
