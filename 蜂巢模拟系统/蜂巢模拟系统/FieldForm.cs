@@ -21,19 +21,17 @@ namespace WindowsFormsApplication1
 
 
 
-        private void FieldForm_MouseClick(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show(e.Location.X + "," + e.Location.Y);
-        }
-
-        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show(e.Location.X + "," + e.Location.Y);
-        }
 
         private void FieldForm_Paint(object sender, PaintEventArgs e)
         {
             Renderer.PaintField(e.Graphics);
         }
+
+        private void FieldForm_Load(object sender, EventArgs e)
+        {
+            this.Size = new Size(782, 360);
+        }
+
+
     }
 }

@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1
         private int ID;
         private Flower destinationFlower;
 
-        [NonSerialized] public BeeStateChanged StateChanged;
+        [NonSerialized] public StateChanged Changed;
 
         
 
@@ -120,9 +120,9 @@ namespace WindowsFormsApplication1
                     break;
             }
 
-            if (oldState != CurrentState && StateChanged != null)
+            if (oldState != CurrentState && Changed != null)
             {
-                StateChanged(ID, CurrentState.ToString());
+                Changed("Bee #"+ID+": "+ CurrentState.ToString());
             }
         
 

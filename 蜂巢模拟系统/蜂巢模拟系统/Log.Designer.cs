@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class FieldForm
+    partial class Log
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -28,25 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // FieldForm
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(328, 425);
+            this.textBox1.TabIndex = 0;
+            // 
+            // Log
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(776, 358);
+            this.ClientSize = new System.Drawing.Size(328, 425);
             this.ControlBox = false;
-            this.DoubleBuffered = true;
+            this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "FieldForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "The Field";
-            this.Load += new System.EventHandler(this.FieldForm_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FieldForm_Paint);
+            this.Name = "Log";
+            this.Text = "Log";
+            this.Load += new System.EventHandler(this.Log_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

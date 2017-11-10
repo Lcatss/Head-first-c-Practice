@@ -9,9 +9,9 @@ namespace WindowsFormsApplication1
     [Serializable] public class World
     {
         private const double NectarHarvestedPerNewFlower = 50;
-        private const int FieldMinX = 15;
+        private const int FieldMinX = 5;
         private const int FieldMinY = 190;
-        private const int FieldMaxX = 750;
+        private const int FieldMaxX = 725;
         private const int FieldMaxY = 268;
         private const int InitialFlowerNumber = 10;
         public int MaxFlower = 60;
@@ -19,17 +19,17 @@ namespace WindowsFormsApplication1
         public Hive hive { get;private set; }
         public List<Bee> Bees { get;set; }
         public List<Flower> Flowers { get;private set; }
-        [NonSerialized] public BeeStateChanged stateChanged;
+        [NonSerialized] public StateChanged Changed;
 
-        public World(BeeStateChanged StateChanged)
+        public World(StateChanged Changed)
         {
-            this.stateChanged = StateChanged;
+            this.Changed = Changed;
             Bees = new List<Bee>();
             Flowers = new List<Flower>();
             Random random = new Random();
             for (int i = 0; i < InitialFlowerNumber; i++)
                 AddFlower(random);
-            hive = new Hive(this,StateChanged);
+            hive = new Hive(this,Changed);
         }
 
         public void Go(Random random)

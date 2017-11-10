@@ -21,15 +21,15 @@ namespace WindowsFormsApplication1
         private Dictionary<string, Point> locations;
         private int beeCount;
         private World world;
-        [NonSerialized] public BeeStateChanged stateChanged;
+        [NonSerialized] public StateChanged Changed;
 
-        public Hive(World world,BeeStateChanged StateChanged)
+        public Hive(World world,StateChanged Changed)
         {
             Honey=InitialHoney;
             InitializeLocations();
             Random random=new Random();
             this.world = world;
-            this.stateChanged = StateChanged;
+            this.Changed = Changed;
             for (int i = 0; i < InitialBeeNumber; i++)
 			{
                 AddBee(random); 
@@ -86,7 +86,7 @@ namespace WindowsFormsApplication1
                     locations["Nursery"].Y + r2);
                 Bee newBee = new Bee(beeCount, startPoint,this,world);
                 world.Bees.Add(newBee);
-                newBee.StateChanged += stateChanged;
+                newBee.Changed += Changed;
             }
         }
 

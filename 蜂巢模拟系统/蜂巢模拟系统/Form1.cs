@@ -20,11 +20,12 @@ namespace WindowsFormsApplication1
         private DateTime start = DateTime.Now;
         private DateTime end;
         private int framesRun = 0;
-        public delegate void getBee_OnStateChanged(int ID, string message);
+
 
         private HiveForm hiveForm = new HiveForm();
         private FieldForm fieldForm = new FieldForm();
         private Menu menu;
+        private Log log = new Log();
         private Renderer renderer;
         
 
@@ -41,6 +42,7 @@ namespace WindowsFormsApplication1
             timer1.Tick+=new EventHandler(RunFrame);
             timer1.Enabled = false;
             UpdateStats(new TimeSpan());
+            log.Show(this);
    
         }
 
@@ -57,7 +59,7 @@ namespace WindowsFormsApplication1
             if (hasMenu)
                 menu.Dispose();
             framesRun = 0;
-            world = new World(new BeeStateChanged(SendMessage));
+            world = new World(new StateChanged(SendMessage));
             menu = new Menu(world, this, random);
             
             if (fieldForm.Visible == false)
@@ -73,7 +75,7 @@ namespace WindowsFormsApplication1
 
 
             renderer = new Renderer(world, hiveForm, fieldForm);
-            
+            log.Reset();
             
             menu.Show(this);
             MoveChildForms();
@@ -85,6 +87,7 @@ namespace WindowsFormsApplication1
             hiveForm.Location = new Point(Location.X + Width + 10, Location.Y);
             fieldForm.Location = new Point(Location.X, Location.Y + Math.Max(Height, hiveForm.Height) + 10);
             menu.Location = new Point(Location.X + Width + 10 + hiveForm.Width + 10, Location.Y);
+            log.Location = new Point(fieldForm.Location.X + fieldForm.Size.Width + 10, fieldForm.Location.Y);
         }
 
         public void UpdateStats(TimeSpan frameDuration)
@@ -159,10 +162,10 @@ namespace WindowsFormsApplication1
             
         }
 
-        private void SendMessage(int ID, string Message)
+        private void SendMessage(string Message)
         {
-            toolStripStatusLabel1.Text = "Bee #" + ID + ": " + Message;
-
+            toolStripStatusLabel1.Text = Message;
+            log.Add_Log(Message);
             //Linq实现的一个更新listbox的代码
             //var beeGroups =
             //    from bee in world.Bees
@@ -192,6 +195,7 @@ namespace WindowsFormsApplication1
         {
             World currentWorld=world;
             int currentFrames=framesRun;
+            string logText = log.GetLog;
 
             timer1.Stop();
             openFileDialog1.Filter = "Bee Files|*.bee";
@@ -206,11 +210,12 @@ namespace WindowsFormsApplication1
                         BinaryFormatter bf = new BinaryFormatter();
                         world = (World)bf.Deserialize(input);
                         framesRun = (int)bf.Deserialize(input);
+                        logText = (string)bf.Deserialize(input);
                     }
-                    world.stateChanged = new BeeStateChanged(SendMessage);
-                    world.hive.stateChanged = new BeeStateChanged(SendMessage);
+                    world.Changed = new StateChanged(SendMessage);
+                    world.hive.Changed = new StateChanged(SendMessage);
                     foreach (Bee bee in world.Bees)
-                        bee.StateChanged = new BeeStateChanged(SendMessage);
+                        bee.Changed = new StateChanged(SendMessage);
                 }
                 catch (SerializationException ex)
                 {
@@ -220,7 +225,9 @@ namespace WindowsFormsApplication1
                 }
             }
             UpdateStats(new TimeSpan());
+            log.LoadLog(logText);
 
+            toolStripButton1.Text = "Resume Simulation";
             renderer = new Renderer(world, hiveForm, fieldForm);
             menu.InitializeFinish();
 
@@ -240,6 +247,7 @@ namespace WindowsFormsApplication1
                     BinaryFormatter bf = new BinaryFormatter();
                     bf.Serialize(output, world);
                     bf.Serialize(output, framesRun);
+                    bf.Serialize(output, log.GetLog);
                 }
             }
             if (state)
@@ -256,8 +264,8 @@ namespace WindowsFormsApplication1
         {
             Rectangle rect = new Rectangle();
             rect=Screen.GetWorkingArea(this);
-            this.Top=rect.Size.Height/2-380;
-            this.Left = rect.Size.Width / 2 - 391;
+            this.Top = Math.Max( rect.Size.Height / 2 - 411,10);
+            this.Left = rect.Size.Width / 2 - 560;
             this.Size = new Size(438, 412);
         }
 

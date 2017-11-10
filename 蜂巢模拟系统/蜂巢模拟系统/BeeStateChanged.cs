@@ -5,5 +5,5 @@ using System.Text;
 
 namespace WindowsFormsApplication1
 {
-    public delegate void BeeStateChanged(int ID,string Message);
+    public delegate void StateChanged(string Message);
 }
