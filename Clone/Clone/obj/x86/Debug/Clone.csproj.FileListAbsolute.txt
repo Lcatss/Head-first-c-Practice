@@ -1,0 +1,7 @@
+D:\z\技术\电脑\C#\Head first c# practice\Clone\Clone\bin\Debug\Clone.exe
+D:\z\技术\电脑\C#\Head first c# practice\Clone\Clone\bin\Debug\Clone.pdb
+D:\z\技术\电脑\C#\Head first c# practice\Clone\Clone\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+D:\z\技术\电脑\C#\Head first c# practice\Clone\Clone\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\z\技术\电脑\C#\Head first c# practice\Clone\Clone\obj\x86\Debug\Clone.csproj.GenerateResource.Cache
+D:\z\技术\电脑\C#\Head first c# practice\Clone\Clone\obj\x86\Debug\Clone.exe
+D:\z\技术\电脑\C#\Head first c# practice\Clone\Clone\obj\x86\Debug\Clone.pdb

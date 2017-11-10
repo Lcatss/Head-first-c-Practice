@@ -13,18 +13,14 @@ namespace WindowsFormsApplication1
     {
         private World world;
         private Form1 form1;
-        private HiveForm hiveForm;
-        private FieldForm fieldForm;
         private Random random;
 
 
-        public Menu(World world,Form1 form1,HiveForm hiveForm,FieldForm fieldForm,Random random)
+        public Menu(World world, Form1 form1, Random random)
         {
             InitializeComponent();
             this.world = world;
             this.form1 = form1;
-            this.hiveForm = hiveForm;
-            this.fieldForm = fieldForm;
             this.random=random;
             InitialBeeNumberBar.Enabled = true;
         }
@@ -72,6 +68,8 @@ namespace WindowsFormsApplication1
                     world.Bees.RemoveAt(world.Bees.Count - 1);
             form1.UpdateStats(new TimeSpan());
         }
+
+
 
 
     }

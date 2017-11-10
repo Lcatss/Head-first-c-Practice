@@ -1,0 +1,5 @@
+D:\z\技术\电脑\C#\Head first c# practice\LINQ\LINQ\bin\Debug\ContactDB.sdf
+D:\z\技术\电脑\C#\Head first c# practice\LINQ\LINQ\bin\Debug\LINQ.exe
+D:\z\技术\电脑\C#\Head first c# practice\LINQ\LINQ\bin\Debug\LINQ.pdb
+D:\z\技术\电脑\C#\Head first c# practice\LINQ\LINQ\obj\x86\Debug\LINQ.exe
+D:\z\技术\电脑\C#\Head first c# practice\LINQ\LINQ\obj\x86\Debug\LINQ.pdb

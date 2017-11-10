@@ -16,7 +16,6 @@ namespace WindowsFormsApplication1
         public HiveForm()
         {
             InitializeComponent();
-            
 
         }
 

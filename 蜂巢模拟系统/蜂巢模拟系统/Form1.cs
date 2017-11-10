@@ -33,11 +33,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
 
             ResetSimulator();
-            menu = new Menu(world,this,hiveForm,fieldForm,random);
             MoveChildForms();
-            menu.Show(this);
-            hiveForm.Show(this);
-            fieldForm.Show(this);
             
 
             timer1.Interval = 1;
@@ -62,13 +58,24 @@ namespace WindowsFormsApplication1
                 menu.Dispose();
             framesRun = 0;
             world = new World(new BeeStateChanged(SendMessage));
+            menu = new Menu(world, this, random);
+            
+            if (fieldForm.Visible == false)
+                fieldForm.Show(this);
+            menu = new Menu(world, this, random);
+            if (hiveForm.Visible == false) 
+                hiveForm.Show(this);
+            
+            /////注意,下面这行加上就不会变长
+            //menu = new Menu(world, this, random);
+
+
             renderer = new Renderer(world, hiveForm, fieldForm);
-            menu = new Menu(world, this, hiveForm, fieldForm, random);
-            if (hasMenu)
-            {
-                menu.Show(this);
-                MoveChildForms();
-            }
+            
+            
+            menu.Show(this);
+            MoveChildForms();
+            
         }
 
         private void MoveChildForms()
@@ -255,5 +262,11 @@ namespace WindowsFormsApplication1
         {
             renderer.AnimatedBees();
         }
+
+
+
+        
+
+
     }
 }
