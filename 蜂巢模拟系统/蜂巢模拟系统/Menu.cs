@@ -23,6 +23,7 @@ namespace WindowsFormsApplication1
             this.form1 = form1;
             this.random=random;
             InitialBeeNumberBar.Enabled = true;
+            this.Size = new Size(334, 412);
         }
 
 

@@ -62,12 +62,14 @@ namespace WindowsFormsApplication1
             
             if (fieldForm.Visible == false)
                 fieldForm.Show(this);
-            menu = new Menu(world, this, random);
             if (hiveForm.Visible == false) 
                 hiveForm.Show(this);
             
-            /////注意,下面这行加上就不会变长
-            //menu = new Menu(world, this, random);
+            //注意,下面这行加上就不会变长，原因未知。
+            //推测是在前面两个show（）函数调用后，clien Size发生了变化，
+            //menu的构造函数对尺寸进行了调整。
+            //通过在构造函数或load函数里写死Size解决（好像不太好？但是懒得研究这个bug了，不太有意思的样子）。
+            menu = new Menu(world, this, random);
 
 
             renderer = new Renderer(world, hiveForm, fieldForm);
@@ -256,6 +258,7 @@ namespace WindowsFormsApplication1
             rect=Screen.GetWorkingArea(this);
             this.Top=rect.Size.Height/2-380;
             this.Left = rect.Size.Width / 2 - 391;
+            this.Size = new Size(438, 412);
         }
 
         private void timer2_Tick(object sender, EventArgs e)

@@ -16,7 +16,6 @@ namespace WindowsFormsApplication1
         public HiveForm()
         {
             InitializeComponent();
-
         }
 
         private void HiveForm_MouseClick(object sender, MouseEventArgs e)
@@ -27,6 +26,11 @@ namespace WindowsFormsApplication1
         private void HiveForm_Paint(object sender, PaintEventArgs e)
         {
             Renderer.PaintHive(e.Graphics);
+        }
+
+        private void HiveForm_Load(object sender, EventArgs e)
+        {
+            this.Size = new Size(334, 412);
         }
     }
 }

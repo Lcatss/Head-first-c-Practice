@@ -41,6 +41,7 @@
             this.Name = "HiveForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "The Hive";
+            this.Load += new System.EventHandler(this.HiveForm_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.HiveForm_Paint);
             this.ResumeLayout(false);
 
