@@ -84,7 +84,7 @@ namespace WindowsFormsApplication1
                 int r2 = random.Next(100) - 50;
                 Point startPoint = new Point(locations["Nursery"].X + r1,
                     locations["Nursery"].Y + r2);
-                Bee newBee = new Bee(beeCount, startPoint,this,world);
+                Bee newBee = new Bee(beeCount, startPoint,this,world,random);
                 world.Bees.Add(newBee);
                 newBee.Changed += Changed;
             }

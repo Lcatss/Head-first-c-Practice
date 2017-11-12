@@ -11,7 +11,9 @@ namespace WindowsFormsApplication1
         private  const double HoneyConsumed = 0.5;
         private const int MoveRate = 3;
         private const double MinimumFlowerNectar = 1.5;
-        private const int CareerSpan = 1000;
+        private const int CareerSpanMin = 1000;
+        private const int CareerSpanMax = 2000;
+        private int CareerSpan;
 
         public int Age { get;private set; }
         public bool InsideHive { get;private set; }
@@ -23,16 +25,17 @@ namespace WindowsFormsApplication1
         private Point location;
         public Point Location { get { return location; } }
 
-        private int ID;
+        private int id;
+        public int ID { get { return id; } }
         private Flower destinationFlower;
 
         [NonSerialized] public StateChanged Changed;
 
         
 
-        public Bee(int id, Point location,Hive hive,World world)
+        public Bee(int id, Point location,Hive hive,World world,Random random)
         {
-            this.ID = id;
+            this.id = id;
             this.Age = 0;
             this.location = location;
             this.InsideHive = true;
@@ -41,6 +44,7 @@ namespace WindowsFormsApplication1
             this.CurrentState = BeeState.空闲;
             this.hive = hive;
             this.world = world;
+            this.CareerSpan = random.Next(1000, 2000);
         }
 
         public void Go(Random random)

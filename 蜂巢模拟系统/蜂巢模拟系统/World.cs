@@ -41,7 +41,10 @@ namespace WindowsFormsApplication1
                 Bee bee = Bees[i];
                 bee.Go(random);
                 if (bee.CurrentState == BeeState.退休)
+                {
+                    Changed("蜜蜂 #" + bee.ID + ": 享年" + bee.Age + "回合");
                     Bees.Remove(bee);
+                }
             }
 
             double totalNectarHarvested = 0;

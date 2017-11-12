@@ -88,7 +88,7 @@
             this.Fps.Name = "Fps";
             this.Fps.Size = new System.Drawing.Size(55, 15);
             this.Fps.TabIndex = 4;
-            this.Fps.Text = "FPS:20";
+            this.Fps.Text = "FPS:50";
             // 
             // FpsBar
             // 
@@ -99,7 +99,7 @@
             this.FpsBar.Size = new System.Drawing.Size(104, 56);
             this.FpsBar.TabIndex = 5;
             this.FpsBar.TickFrequency = 10;
-            this.FpsBar.Value = 20;
+            this.FpsBar.Value = 50;
             this.FpsBar.Scroll += new System.EventHandler(this.FpsBar_Scroll);
             // 
             // Menu
