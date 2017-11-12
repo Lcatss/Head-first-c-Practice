@@ -24,6 +24,8 @@ namespace WindowsFormsApplication1
             this.random=random;
             InitialBeeNumberBar.Enabled = true;
             this.Size = new Size(334, 412);
+            this.MaxBeeNumberBar.Value = world.hive.MaxBeeNumber;
+            this.maxBeeNumber.Text = "Max Bee Number:" + world.hive.MaxBeeNumber;
         }
 
 

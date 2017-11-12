@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1
         private const double InitialHoney = 3.2;
         private const double MaxHoney = 30;
         private const double HoneyPerNectar = 0.25;
-        public  int MaxBeeNumber = 38;
+        public  int MaxBeeNumber = 50;
         private const double BreedHoney = 0.7;
 
         //variable declrations
@@ -92,7 +92,7 @@ namespace WindowsFormsApplication1
 
         public void Go(Random random)
         {
-            if (random.Next(30) == 1)
+            if (random.Next(10) == 1)
                 if(ConsumeHoney(BreedHoney))
                     AddBee(random);
             

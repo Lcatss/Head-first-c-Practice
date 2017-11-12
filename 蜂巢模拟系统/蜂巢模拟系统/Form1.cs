@@ -10,6 +10,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 using System.Drawing.Printing;
+using System.Diagnostics;
 
 namespace WindowsFormsApplication1
 {
@@ -37,7 +38,7 @@ namespace WindowsFormsApplication1
             MoveChildForms();
             
 
-            timer1.Interval = 1;
+            timer1.Interval = 20;
             timer2.Interval = 3 * timer1.Interval;
             timer1.Tick+=new EventHandler(RunFrame);
             timer1.Enabled = false;
@@ -128,12 +129,14 @@ namespace WindowsFormsApplication1
 
         public void RunFrame(object sender, EventArgs e)
         {
+            
+
             framesRun++;
             world.Go(random);
             end = DateTime.Now;
             TimeSpan frameDuration = end - start;
             start = end;
-            
+
             UpdateStats(frameDuration);
 
             hiveForm.Invalidate();
@@ -176,8 +179,10 @@ namespace WindowsFormsApplication1
 
         private void SendMessage(string Message)
         {
-            toolStripStatusLabel1.Text = Message;
+
+            toolStripStatusLabel1.Text = Message;         
             log.Add_Log(Message);
+
             //Linq实现的一个更新listbox的代码
             //var beeGroups =
             //    from bee in world.Bees

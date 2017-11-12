@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace WindowsFormsApplication1
 {
@@ -28,22 +29,28 @@ namespace WindowsFormsApplication1
 
         private void AddNewLog(string message)
         {
-            this.log += message += "\r\n\r\n";
-            textBox1.Text=log;
+           
+            this.log+=message + "\r\n\r\n";
+            textBox1.AppendText(message + "\r\n\r\n");
+            //textBox1.Text += (message + "\r\n\r\n");
+            
+            
             textBox1.SelectionStart = textBox1.Text.Length;
             textBox1.ScrollToCaret();
         }
 
         public void Reset()
         {
-            log = "";
+            log ="";
             textBox1.Text = "";
         }
 
         public void LoadLog(string log)
         {
             this.log = log;
-            textBox1.Text = log;
+            this.textBox1.Text = log;
+
+                
         }
     }
 }

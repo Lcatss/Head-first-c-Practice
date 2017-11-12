@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Diagnostics;
 
 namespace WindowsFormsApplication1
 {
@@ -34,6 +35,7 @@ namespace WindowsFormsApplication1
 
         public void Go(Random random)
         {
+
             hive.Go(random);
 
             for (int i = Bees.Count - 1; i >= 0; i--)
@@ -42,7 +44,7 @@ namespace WindowsFormsApplication1
                 bee.Go(random);
                 if (bee.CurrentState == BeeState.退休)
                 {
-                    Changed("蜜蜂 #" + bee.ID + ": 享年" + bee.Age + "回合");
+                    Changed("蜜蜂 #" + bee.ID + ": 死亡，享年" + bee.Age + "回合");
                     Bees.Remove(bee);
                 }
             }
